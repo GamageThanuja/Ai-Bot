@@ -85,7 +85,9 @@
     <button onclick="sendMessage()">Send</button>
   </div>
 
-  <script>
+  <script type="module">
+  import { showBotResponseSteps } from "/static/botResponseAnimator.js";
+
     async function sendMessage() {
       const input = document.getElementById("user-input");
       const chatBox = document.getElementById("chat-box");
@@ -114,11 +116,8 @@
       const data = await res.json();
       const botText = data.response || "Sorry, I couldn't understand that.";
 
-      const botMsg = document.createElement("div");
-      botMsg.className = "message bot";
-      botMsg.textContent = botText;
-      chatBox.appendChild(botMsg);
-      chatBox.scrollTop = chatBox.scrollHeight;
+  // Animate bot response step by step with Next button
+  showBotResponseSteps(botText, chatBox);
     }
 
     document.getElementById("user-input").addEventListener("keydown", function(e) {
