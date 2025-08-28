@@ -1,10 +1,12 @@
 from fastapi import FastAPI, HTTPException, Request
+from fastapi.staticfiles import StaticFiles
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel
 from app.chatbot import load_chain, filter_response
 
 app = FastAPI()
+app.mount("/static", StaticFiles(directory="app/static"), name="static")
 qa_chain = load_chain()
 templates = Jinja2Templates(directory="app/templates")
 

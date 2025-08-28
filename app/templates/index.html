@@ -78,6 +78,8 @@
 </head>
 <body>
   <div id="chat-box"></div>
+    <!-- Animated GIF example -->
+  <img id="robot-gif" src="/static/robothello.gif" alt="Animated GIF" style="width:120px; height:120px;" />
   <div id="input-container">
     <input type="text" id="user-input" placeholder="Ask something..." />
     <button onclick="sendMessage()">Send</button>
@@ -89,6 +91,12 @@
       const chatBox = document.getElementById("chat-box");
       const userText = input.value.trim();
       if (!userText) return;
+
+      // Hide the GIF when user sends a message
+      const robotGif = document.getElementById("robot-gif");
+      if (robotGif) {
+        robotGif.style.display = "none";
+      }
 
       const userMsg = document.createElement("div");
       userMsg.className = "message user";
