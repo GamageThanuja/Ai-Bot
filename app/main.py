@@ -2,7 +2,7 @@ from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel
-from app.chatbot import load_chain
+from app.chatbot import load_chain, filter_response
 
 app = FastAPI()
 qa_chain = load_chain()
@@ -19,7 +19,7 @@ def read_root(request: Request):
 def chat(request: QueryRequest):
     try:
         result = qa_chain.invoke({"query": request.query})
-        response = result['result']
+        response = filter_response(request.query, result)
 
         for prefix in ["According to the provided context, ", "According to the context, "]:
             if response.startswith(prefix):
