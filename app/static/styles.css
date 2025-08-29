@@ -1,0 +1,136 @@
+body {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	margin: 0;
+	padding: 0;
+	background: #f7f7f8;
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+}
+
+#chat-box {
+	flex: 1;
+	padding: 20px;
+	overflow-y: auto;
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+.message {
+	max-width: 75%;
+	padding: 12px 16px;
+	border-radius: 12px;
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+.user {
+	align-self: flex-end;
+	background-color: #1a73e8;
+	color: white;
+	border-bottom-right-radius: 0;
+}
+
+.bot {
+	align-self: flex-start;
+	background-color: #e4e6eb;
+	color: #333;
+	border-bottom-left-radius: 0;
+}
+
+/* --- Input bar container (pill) --- */
+#input-container.chat-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: #ffffff;
+  border: 1px solid #d0d5dd;            /* subtle gray like your theme */
+  border-radius: 9999px;                 /* pill shape */
+  box-shadow: 0 1px 0 rgba(16,24,40,0.04);
+  margin: 12px;
+}
+
+/* Focus glow consistent with your blue
+#input-container.chat-input:focus-within {
+  border-color: #1a73e8;
+  box-shadow: 0 0 0 3px rgba(26,115,232,0.15);
+} */
+
+/* Input */
+#input-container .chat-input input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 16px;
+  padding: 6px 4px;
+  color: #111827;
+}
+
+#input-container .chat-input input::placeholder {
+  color: #9aa3af;
+}
+
+/* Icon button */
+#input-container .icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  width: 36px;
+  border: none;
+  outline: none;
+  background: transparent;
+  border-radius: 9999px;
+  cursor: pointer;
+  color: #000000;                         /* primary blue */
+}
+
+#input-container .icon-btn:hover {
+  background: #eef4ff;                    /* light hover */
+}
+
+#input-container .icon-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  background: transparent;
+}
+
+/* Remove the old footer bar look */
+#input-container {
+  border-top: none;                        /* keep layout clean */
+  background: transparent;
+}
+
+/* Keep your existing layout above this line (chat box, messages, etc.) */
+
+input {
+	flex-grow: 1;
+	padding: 12px;
+	font-size: 16px;
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	margin-right: 10px;
+}
+
+
+/* Contenteditable span as the input */
+#input-container.chat-input #user-input {
+  flex: 1;
+  outline: none;
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  color: #111827;
+  padding: 10px 12px;
+  min-height: 20px; /* ensure it's clickable */
+}
+
+/* Placeholder effect for empty span */
+#input-container.chat-input #user-input:empty:before {
+  content: attr(data-placeholder);
+  color: #9aa3af;
+  pointer-events: none;
+}

@@ -4,86 +4,30 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>HotelMate Chatbot</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f7f7f8;
-      display: flex;
-      flex-direction: column;
-      height: 100vh;
-    }
-
-    #chat-box {
-      flex: 1;
-      padding: 20px;
-      overflow-y: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-
-    .message {
-      max-width: 75%;
-      padding: 12px 16px;
-      border-radius: 12px;
-      line-height: 1.5;
-      white-space: pre-wrap;
-    }
-
-    .user {
-      align-self: flex-end;
-      background-color: #1a73e8;
-      color: white;
-      border-bottom-right-radius: 0;
-    }
-
-    .bot {
-      align-self: flex-start;
-      background-color: #e4e6eb;
-      color: #333;
-      border-bottom-left-radius: 0;
-    }
-
-    #input-container {
-      display: flex;
-      padding: 12px;
-      background: white;
-      border-top: 1px solid #ccc;
-    }
-
-    input {
-      flex-grow: 1;
-      padding: 12px;
-      font-size: 16px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      margin-right: 10px;
-    }
-
-    button {
-      padding: 12px 20px;
-      background-color: #1a73e8;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #155ec3;
-    }
-  </style>
+  <link rel="stylesheet" href="/static/styles.css" />
 </head>
 <body>
   <div id="chat-box"></div>
     <!-- Animated GIF example -->
   <img id="robot-gif" src="/static/robothello.gif" alt="Animated GIF" style="width:120px; height:120px;" />
-  <div id="input-container">
-    <input type="text" id="user-input" placeholder="Ask something..." />
-    <button onclick="sendMessage()">Send</button>
-  </div>
+<!-- REPLACE the old #input-container block with this -->
+<div id="input-container" class="chat-input">
+  <span
+    id="user-input"
+    contenteditable="true"
+    aria-label="Type your message"
+    data-placeholder="Ask anything..."
+  ></span>
+  <button id="send-btn" class="icon-btn" aria-label="Send">
+    <!-- Lucide SendHorizontal (inline SVG) -->
+    <svg id="send-icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+      viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="m3 3 3 9-3 9 19-9Z"></path>
+      <path d="M6 12h16"></path>
+    </svg>
+  </button>
+</div>
 
   <script type="module">
   import { showBotResponseSteps } from "/static/botResponseAnimator.js";
@@ -91,7 +35,7 @@
     async function sendMessage() {
       const input = document.getElementById("user-input");
       const chatBox = document.getElementById("chat-box");
-      const userText = input.value.trim();
+      const userText = input.textContent.trim();
       if (!userText) return;
 
       // Hide the GIF when user sends a message
@@ -104,7 +48,7 @@
       userMsg.className = "message user";
       userMsg.textContent = userText;
       chatBox.appendChild(userMsg);
-      input.value = "";
+      input.textContent = "";
       chatBox.scrollTop = chatBox.scrollHeight;
 
       const res = await fetch("/chat", {
@@ -116,13 +60,28 @@
       const data = await res.json();
       const botText = data.response || "Sorry, I couldn't understand that.";
 
-  // Animate bot response step by step with Next button
-  showBotResponseSteps(botText, chatBox);
+      // Animate bot response step by step with Next button
+      showBotResponseSteps(botText, chatBox);
     }
 
-    document.getElementById("user-input").addEventListener("keydown", function(e) {
+    const inputEl = document.getElementById("user-input");
+    const sendBtn = document.getElementById("send-btn");
+
+    function syncSendDisabled() {
+      sendBtn.disabled = inputEl.textContent.trim() === "";
+    }
+    syncSendDisabled();
+
+    inputEl.addEventListener("input", syncSendDisabled);
+
+    sendBtn.addEventListener("click", () => {
+      if (!sendBtn.disabled) sendMessage();
+    });
+
+    inputEl.addEventListener("keydown", (e) => {
       if (e.key === "Enter") {
-        sendMessage();
+        e.preventDefault();
+        if (!sendBtn.disabled) sendMessage();
       }
     });
   </script>
