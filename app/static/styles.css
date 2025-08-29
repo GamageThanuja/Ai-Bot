@@ -1,42 +1,43 @@
+/* === Base layout / your existing styles === */
 body {
-	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-	margin: 0;
-	padding: 0;
-	background: #f7f7f8;
-	display: flex;
-	flex-direction: column;
-	height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f7f7f8;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 #chat-box {
-	flex: 1;
-	padding: 20px;
-	overflow-y: auto;
-	display: flex;
-	flex-direction: column;
-	gap: 15px;
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .message {
-	max-width: 75%;
-	padding: 12px 16px;
-	border-radius: 12px;
-	line-height: 1.5;
-	white-space: pre-wrap;
+  max-width: 75%;
+  padding: 12px 16px;
+  border-radius: 12px;
+  line-height: 1.5;
+  white-space: pre-wrap;
 }
 
 .user {
-	align-self: flex-end;
-	background-color: #1a73e8;
-	color: white;
-	border-bottom-right-radius: 0;
+  align-self: flex-end;
+  background-color: #1a73e8;
+  color: white;
+  border-bottom-right-radius: 0;
 }
 
 .bot {
-	align-self: flex-start;
-	background-color: #e4e6eb;
-	color: #333;
-	border-bottom-left-radius: 0;
+  align-self: flex-start;
+  background-color: #e4e6eb;
+  color: #333;
+  border-bottom-left-radius: 0;
 }
 
 /* --- Input bar container (pill) --- */
@@ -46,31 +47,29 @@ body {
   gap: 10px;
   padding: 10px 12px;
   background: #ffffff;
-  border: 1px solid #d0d5dd;            /* subtle gray like your theme */
-  border-radius: 9999px;                 /* pill shape */
+  border: 1px solid #d0d5dd;
+  border-radius: 9999px;
   box-shadow: 0 1px 0 rgba(16,24,40,0.04);
   margin: 12px;
 }
 
-/* Focus glow consistent with your blue
-#input-container.chat-input:focus-within {
-  border-color: #1a73e8;
-  box-shadow: 0 0 0 3px rgba(26,115,232,0.15);
-} */
-
-/* Input */
-#input-container .chat-input input {
+/* Contenteditable span as the input */
+#input-container.chat-input #user-input {
   flex: 1;
-  border: none;
   outline: none;
+  border: none;
   background: transparent;
   font-size: 16px;
-  padding: 6px 4px;
   color: #111827;
+  padding: 10px 12px;
+  min-height: 20px;
 }
 
-#input-container .chat-input input::placeholder {
+/* Placeholder for empty contenteditable */
+#input-container.chat-input #user-input:empty:before {
+  content: attr(data-placeholder);
   color: #9aa3af;
+  pointer-events: none;
 }
 
 /* Icon button */
@@ -85,52 +84,64 @@ body {
   background: transparent;
   border-radius: 9999px;
   cursor: pointer;
-  color: #000000;                         /* primary blue */
+  color: #000000;
+}
+#input-container .icon-btn:hover { background: #eef4ff; }
+#input-container .icon-btn:disabled { opacity: 0.45; cursor: not-allowed; }
+
+/* === Typing Indicator (three bouncing dots) === */
+#typing-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 20px 12px 20px;
+  width: fit-content;
+  color: #333;
+  border-radius: 12px;
+  align-self: flex-start;   
 }
 
-#input-container .icon-btn:hover {
-  background: #eef4ff;                    /* light hover */
+#typing-indicator .ti-avatar {
+  width: 29px;                
+  height: 29px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  box-shadow: 0 1px 2px rgba(0,0,0,.12);
+  /* optional ring if your logo sits on dark bg */
+  /* outline: 2px solid #fff; outline-offset: 0; */
 }
 
-#input-container .icon-btn:disabled {
-  opacity: 0.45;
-  cursor: not-allowed;
-  background: transparent;
+#typing-indicator.hidden { display: none; }
+
+#typing-indicator .dot {
+  width: 8px;
+  height: 8px;
+  background: #000000; 
+  border-radius: 50%;
+  animation: bounce 1.5s infinite ease-in-out;
 }
 
-/* Remove the old footer bar look */
-#input-container {
-  border-top: none;                        /* keep layout clean */
-  background: transparent;
+#typing-indicator .dot:nth-child(1) { animation-delay: 0s; }
+#typing-indicator .dot:nth-child(2) { animation-delay: 0.15s; }
+#typing-indicator .dot:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes bounce {
+  0%, 80%, 100% { transform: translateY(0); opacity: 0.6; }
+  40% { transform: translateY(-12px); opacity: 1; }
 }
 
-/* Keep your existing layout above this line (chat box, messages, etc.) */
-
-input {
-	flex-grow: 1;
-	padding: 12px;
-	font-size: 16px;
-	border: 1px solid #ccc;
-	border-radius: 8px;
-	margin-right: 10px;
+/* Welcome message above input */
+#welcome-message {
+  margin: 0 12px 8px 12px;   /* left/right aligned with input */
+  padding: 10px 14px;
+  color: #333;
+  border-radius: 12px;
+  font-size: 14px;
+  line-height: 1.4;
+  max-width: calc(100% - 24px);
 }
 
-
-/* Contenteditable span as the input */
-#input-container.chat-input #user-input {
-  flex: 1;
-  outline: none;
-  border: none;
-  background: transparent;
-  font-size: 16px;
-  color: #111827;
-  padding: 10px 12px;
-  min-height: 20px; /* ensure it's clickable */
-}
-
-/* Placeholder effect for empty span */
-#input-container.chat-input #user-input:empty:before {
-  content: attr(data-placeholder);
-  color: #9aa3af;
-  pointer-events: none;
+#welcome-message.hidden {
+  display: none;
 }

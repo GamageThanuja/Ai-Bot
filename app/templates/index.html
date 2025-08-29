@@ -8,82 +8,43 @@
 </head>
 <body>
   <div id="chat-box"></div>
-    <!-- Animated GIF example -->
-  <img id="robot-gif" src="/static/robothello.gif" alt="Animated GIF" style="width:120px; height:120px;" />
-<!-- REPLACE the old #input-container block with this -->
-<div id="input-container" class="chat-input">
-  <span
-    id="user-input"
-    contenteditable="true"
-    aria-label="Type your message"
-    data-placeholder="Ask anything..."
-  ></span>
-  <button id="send-btn" class="icon-btn" aria-label="Send">
-    <!-- Lucide SendHorizontal (inline SVG) -->
-    <svg id="send-icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40"
-      viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="m3 3 3 9-3 9 19-9Z"></path>
-      <path d="M6 12h16"></path>
-    </svg>
-  </button>
+
+  <!-- optional welcome GIF -->
+  <img id="robot-gif" src="/static/robothello.gif" alt="Animated GIF" style="width:120px;height:120px;" />
+
+  <!-- Typing / loading indicator -->
+<div id="typing-indicator" class="typing hidden" aria-live="polite" aria-label="Bot is typing">
+  <img class="ti-avatar" src="/static/AI Logo-01.png" alt="HotelMate bot" />
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
 </div>
 
+  <!-- Welcome: typewriter above input (reuse the SAME typing indicator) -->
+  <div id="welcome-container" class="welcome hidden" aria-live="polite" aria-label="Assistant welcome">
+    <span id="welcome-text"></span>
+  </div>
+
+  <!-- Input bar -->
+  <div id="input-container" class="chat-input">
+    <span
+      id="user-input"
+      contenteditable="true"
+      aria-label="Type your message"
+      data-placeholder="Ask anything..."
+    ></span>
+    <button id="send-btn" class="icon-btn" aria-label="Send">
+      <svg id="send-icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="m3 3 3 9-3 9 19-9Z"></path>
+        <path d="M6 12h16"></path>
+      </svg>
+    </button>
+  </div>
+
   <script type="module">
-  import { showBotResponseSteps } from "/static/botResponseAnimator.js";
-
-    async function sendMessage() {
-      const input = document.getElementById("user-input");
-      const chatBox = document.getElementById("chat-box");
-      const userText = input.textContent.trim();
-      if (!userText) return;
-
-      // Hide the GIF when user sends a message
-      const robotGif = document.getElementById("robot-gif");
-      if (robotGif) {
-        robotGif.style.display = "none";
-      }
-
-      const userMsg = document.createElement("div");
-      userMsg.className = "message user";
-      userMsg.textContent = userText;
-      chatBox.appendChild(userMsg);
-      input.textContent = "";
-      chatBox.scrollTop = chatBox.scrollHeight;
-
-      const res = await fetch("/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ query: userText })
-      });
-
-      const data = await res.json();
-      const botText = data.response || "Sorry, I couldn't understand that.";
-
-      // Animate bot response step by step with Next button
-      showBotResponseSteps(botText, chatBox);
-    }
-
-    const inputEl = document.getElementById("user-input");
-    const sendBtn = document.getElementById("send-btn");
-
-    function syncSendDisabled() {
-      sendBtn.disabled = inputEl.textContent.trim() === "";
-    }
-    syncSendDisabled();
-
-    inputEl.addEventListener("input", syncSendDisabled);
-
-    sendBtn.addEventListener("click", () => {
-      if (!sendBtn.disabled) sendMessage();
-    });
-
-    inputEl.addEventListener("keydown", (e) => {
-      if (e.key === "Enter") {
-        e.preventDefault();
-        if (!sendBtn.disabled) sendMessage();
-      }
-    });
+    import "/static/app.js";
   </script>
 </body>
 </html>
