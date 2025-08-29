@@ -7,6 +7,7 @@ body {
   display: flex;
   flex-direction: column;
   height: 100vh;
+
 }
 
 #chat-box {
@@ -16,6 +17,27 @@ body {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  background: linear-gradient(135deg, #0f2027 0%, #1a0033 40%, #ff0080 70%, #0099ff 100%);
+  /* Simulate night sky with subtle stars */
+  position: relative;
+}
+#chat-box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle, #fff 0.5px, transparent 1px),
+    radial-gradient(circle, #fff 0.5px, transparent 1px),
+    radial-gradient(circle, #fff 0.5px, transparent 1px);
+  background-size: 120px 120px, 200px 200px, 80px 80px;
+  background-position: 20px 40px, 120px 80px, 60px 160px;
+  opacity: 0.25;
+  z-index: 0;
+}
+#chat-box > * {
+  position: relative;
+  z-index: 1;
 }
 
 /* === Messages === */
