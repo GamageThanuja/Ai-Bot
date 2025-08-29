@@ -4,26 +4,97 @@ const chatBox  = document.getElementById("chat-box");
 const inputEl  = document.getElementById("user-input");
 const sendBtn  = document.getElementById("send-btn");
 const robotGif = document.getElementById("robot-gif");
-const typingEl = document.getElementById("typing-indicator");
 
-// NEW refs
+// Welcome message
 const welcomeContainer = document.getElementById("welcome-container");
 const welcomeTextEl    = document.getElementById("welcome-text");
-const WELCOME_MSG = "Hey, It’s LIA, your Intelligent Agent. Wondering how I can supercharge your business? Or maybe you just want to know more about me? Shoot your questions my way!";
+const WELCOME_MSG = "Hey, It's LIA, your Intelligent Agent. Wondering how I can supercharge your business? Or maybe you just want to know more about me? Shoot your questions my way!";
 
 let welcomeTimeoutId = null;
 let welcomeTypingTimer = null;
 let welcomeCanceled = false;
 let welcomeStarted  = false;
 
-// ---- Typing indicator helpers --------------------------------------------
-function showTyping() {
-  typingEl.classList.remove("hidden");
-  chatBox.appendChild(typingEl);
-  chatBox.scrollTop = chatBox.scrollHeight;
+// ---- Helper to create bot message with avatar and optional typing dots ----
+function createBotMessage() {
+  const botMsg = document.createElement("div");
+  botMsg.className = "message bot";
+  botMsg.style.display = "flex";
+  botMsg.style.alignItems = "flex-start";
+  botMsg.style.gap = "8px";
+  botMsg.style.background = "transparent";
+  botMsg.style.padding = "0";
+  
+  // Create avatar element
+  const avatar = document.createElement("img");
+  avatar.className = "bot-avatar";
+  avatar.src = "/static/AI Logo-01.png";
+  avatar.alt = "HotelMate bot";
+  avatar.style.width = "29px";
+  avatar.style.height = "29px";
+  avatar.style.borderRadius = "50%";
+  avatar.style.objectFit = "cover";
+  avatar.style.boxShadow = "0 1px 2px rgba(0,0,0,.12)";
+  avatar.style.flexShrink = "0";
+  
+  // Create content container (will hold either dots or actual message)
+  const contentDiv = document.createElement("div");
+  contentDiv.className = "bot-content";
+  contentDiv.style.background = "#e4e6eb";
+  contentDiv.style.color = "#333";
+  contentDiv.style.padding = "12px 16px";
+  contentDiv.style.borderRadius = "12px";
+  contentDiv.style.borderBottomLeftRadius = "0";
+  contentDiv.style.lineHeight = "1.5";
+  contentDiv.style.whiteSpace = "pre-wrap";
+  contentDiv.style.maxWidth = "100%";
+  
+  // Append avatar and content
+  botMsg.appendChild(avatar);
+  botMsg.appendChild(contentDiv);
+  
+  return botMsg;
 }
-function hideTyping() {
-  typingEl.classList.add("hidden");
+
+// ---- Helper to add typing dots to a content div ----
+function addTypingDots(contentDiv) {
+  contentDiv.innerHTML = '';
+  contentDiv.style.display = "flex";
+  contentDiv.style.alignItems = "center";
+  contentDiv.style.gap = "4px";
+  contentDiv.style.padding = "12px 16px";
+  
+  for (let i = 0; i < 3; i++) {
+    const dot = document.createElement("span");
+    dot.className = "dot";
+    dot.style.width = "8px";
+    dot.style.height = "8px";
+    dot.style.background = "#000000";
+    dot.style.borderRadius = "50%";
+    dot.style.animation = "bounce 1.5s infinite ease-in-out";
+    dot.style.animationDelay = `${i * 0.15}s`;
+    contentDiv.appendChild(dot);
+  }
+  
+  // Add keyframes if not already present
+  if (!document.querySelector('#typing-animation-style')) {
+    const style = document.createElement('style');
+    style.id = 'typing-animation-style';
+    style.textContent = `
+      @keyframes bounce {
+        0%, 80%, 100% { transform: translateY(0); opacity: 0.6; }
+        40% { transform: translateY(-12px); opacity: 1; }
+      }
+    `;
+    document.head.appendChild(style);
+  }
+}
+
+// ---- Helper to clear typing dots and set text content ----
+function replaceDotsWithContent(contentDiv, text) {
+  contentDiv.innerHTML = '';
+  contentDiv.style.display = "block";
+  contentDiv.textContent = text;
 }
 
 // ---- Send button enable/disable -------------------------------------------
@@ -32,79 +103,108 @@ function syncSendDisabled() {
 }
 syncSendDisabled();
 
-// ---- Welcome flow (above input) -------------------------------------------
+// ---- Welcome flow -------------------------------------------
+function showRobotGif() {
+  if (robotGif && !welcomeCanceled) {
+    // Create a container div for bottom-left positioning
+    const gifContainer = document.createElement("div");
+    gifContainer.id = "gif-container";
+    gifContainer.style.position = "fixed";
+    gifContainer.style.bottom = "90px"; // Above input field with proper spacing
+    gifContainer.style.left = "20px";
+    gifContainer.style.zIndex = "100";
+    
+    robotGif.style.display = "block";
+    gifContainer.appendChild(robotGif);
+    document.body.appendChild(gifContainer);
+  }
+}
+
+function hideRobotGif() {
+  const gifContainer = document.getElementById("gif-container");
+  if (gifContainer) {
+    gifContainer.remove();
+  }
+  if (robotGif) {
+    robotGif.style.display = "none";
+  }
+}
+
 function startWelcome() {
-  if (welcomeStarted || welcomeCanceled) return;
+  if (welcomeCanceled) return;
   welcomeStarted = true;
 
-  if (robotGif) robotGif.style.display = "none";
-  if (!welcomeContainer || !welcomeTextEl) return;
+  // Hide robot GIF as we transition to welcome message
+  hideRobotGif();
 
-  welcomeContainer.classList.remove("hidden");
+  // Create a special welcome container at the bottom left
+  const welcomeWrapper = document.createElement("div");
+  welcomeWrapper.id = "welcome-wrapper";
+  welcomeWrapper.style.position = "fixed";
+  welcomeWrapper.style.bottom = "90px"; // Same position as GIF
+  welcomeWrapper.style.left = "20px";
+  welcomeWrapper.style.zIndex = "100";
+  welcomeWrapper.style.maxWidth = "400px";
+  
+  // Create welcome message with avatar and typing dots
+  const welcomeMsg = createBotMessage();
+  const welcomeContent = welcomeMsg.querySelector('.bot-content');
+  welcomeWrapper.appendChild(welcomeMsg);
+  document.body.appendChild(welcomeWrapper);
+  
+  // Show typing dots initially
+  addTypingDots(welcomeContent);
 
-  // Show typing indicator for 2 seconds, then start welcome animation
-  welcomeContainer.appendChild(typingEl);
-  typingEl.classList.remove("hidden");
-
+  // After 2 seconds, replace dots with actual welcome text
   setTimeout(() => {
-    typingEl.classList.add("hidden");
-    welcomeTextEl.textContent = "";
+    // Replace dots with empty text to start typing animation
+    replaceDotsWithContent(welcomeContent, "");
+    
+    // Start typing animation
     const chars = [...WELCOME_MSG];
     let i = 0;
     const SPEED = 26; // ms per char
     welcomeTypingTimer = setInterval(() => {
-      if (welcomeCanceled) {
-        cleanupWelcome(true);
-        return;
-      }
       if (i < chars.length) {
-        welcomeTextEl.textContent += chars[i++];
+        welcomeContent.textContent += chars[i++];
       } else {
         clearInterval(welcomeTypingTimer);
         welcomeTypingTimer = null;
+        // Welcome message stays visible throughout the entire chat
       }
     }, SPEED);
   }, 2000);
 }
 
 function cancelWelcomeIfPending() {
-  if (welcomeTimeoutId) {
-    clearTimeout(welcomeTimeoutId);
-    welcomeTimeoutId = null;
-  }
+  // Only cancel if welcome hasn't started yet
   if (!welcomeStarted) {
+    if (welcomeTimeoutId) {
+      clearTimeout(welcomeTimeoutId);
+      welcomeTimeoutId = null;
+    }
     welcomeCanceled = true;
-    if (robotGif) robotGif.style.display = "none";
-  } else {
-    cleanupWelcome(true);
+    hideRobotGif();
   }
+  // If welcome has started, let it continue and stay visible
 }
 
-function cleanupWelcome(hide = false) {
-  if (welcomeTypingTimer) {
-    clearInterval(welcomeTypingTimer);
-    welcomeTypingTimer = null;
-  }
-  typingEl.classList.add("hidden");
-  if (hide && !welcomeContainer.classList.contains("hidden")) {
-    welcomeContainer.classList.add("hidden");
-  }
-  welcomeTextEl.textContent = "";
-  if (robotGif) robotGif.style.display = "none";
-  welcomeCanceled = true;
-}
-
-// Start the 2s timer once DOM is ready
+// Start the flow once DOM is ready
 window.addEventListener("DOMContentLoaded", () => {
-  welcomeTimeoutId = setTimeout(startWelcome, 2000);
+  // Show robot GIF immediately
+  showRobotGif();
+  
+  // After 3 seconds, hide GIF and start welcome message
+  welcomeTimeoutId = setTimeout(startWelcome, 3000);
 });
 
-// If the user starts typing before 2s, cancel the welcome + hide GIF
+// If the user starts typing before the welcome message appears, cancel it
 inputEl.addEventListener("input", () => {
   syncSendDisabled();
-  if (inputEl.textContent.trim() !== "") {
+  if (inputEl.textContent.trim() !== "" && !welcomeStarted) {
     cancelWelcomeIfPending();
   }
+  // If welcome has started, it stays visible throughout the chat
 });
 
 // ---- Send message ----------------------------------------------------------
@@ -112,8 +212,11 @@ async function sendMessage() {
   const userText = inputEl.textContent.trim();
   if (!userText) return;
 
-  // Cancel/hide welcome on first send
-  cancelWelcomeIfPending();
+  // Cancel GIF/welcome only if it hasn't started displaying yet
+  if (!welcomeStarted) {
+    cancelWelcomeIfPending();
+  }
+  // If welcome has already started, it remains visible
 
   // Add user message
   const userMsg = document.createElement("div");
@@ -126,8 +229,14 @@ async function sendMessage() {
   syncSendDisabled();
   chatBox.scrollTop = chatBox.scrollHeight;
 
-  // Show typing while fetching
-  showTyping();
+  // Create bot message with avatar and typing dots
+  const botMsg = createBotMessage();
+  const botContent = botMsg.querySelector('.bot-content');
+  chatBox.appendChild(botMsg);
+  
+  // Show typing dots
+  addTypingDots(botContent);
+  chatBox.scrollTop = chatBox.scrollHeight;
 
   try {
     const res = await fetch("/chat", {
@@ -139,14 +248,15 @@ async function sendMessage() {
     const data = await res.json();
     const botText = data.response || "Sorry, I couldn't understand that.";
 
-    hideTyping();
-    showBotResponseSteps(botText, chatBox);
+    // Replace typing dots with actual response
+    replaceDotsWithContent(botContent, "");
+    
+    // Use showBotResponseSteps with the content div
+    showBotResponseSteps(botText, botContent);
+    
   } catch (err) {
-    hideTyping();
-    const errMsg = document.createElement("div");
-    errMsg.className = "message bot";
-    errMsg.textContent = "Network error. Please try again.";
-    chatBox.appendChild(errMsg);
+    // Replace typing dots with error message
+    replaceDotsWithContent(botContent, "Network error. Please try again.");
   } finally {
     chatBox.scrollTop = chatBox.scrollHeight;
   }
@@ -156,6 +266,7 @@ async function sendMessage() {
 sendBtn.addEventListener("click", () => {
   if (!sendBtn.disabled) sendMessage();
 });
+
 inputEl.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
     e.preventDefault();
