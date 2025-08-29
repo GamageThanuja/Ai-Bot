@@ -7,6 +7,7 @@ body {
   display: flex;
   flex-direction: column;
   height: 100vh;
+    background: linear-gradient(180deg, #18181a 0%, #4f234e 50%, #1f2430 100%);
 
 }
 
@@ -17,7 +18,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  background: linear-gradient(135deg, #0f2027 0%, #1a0033 40%, #ff0080 70%, #0099ff 100%);
   /* Simulate night sky with subtle stars */
   position: relative;
 }
@@ -105,6 +105,7 @@ body {
     opacity: 1; 
   }
 }
+
 
 /* === Input bar container (pill) === */
 #input-container.chat-input {
