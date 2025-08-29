@@ -5,6 +5,60 @@ const inputEl  = document.getElementById("user-input");
 const sendBtn  = document.getElementById("send-btn");
 const robotGif = document.getElementById("robot-gif");
 
+// --- Attachments (image only) ---
+const fileInput = document.getElementById("file-input");
+const attachBtn = document.getElementById("attach-btn");
+
+if (attachBtn && fileInput) {
+  attachBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    fileInput.click();
+  });
+}
+
+// Optional: show selected filename as a small pill near the send button
+function showSelectedFilePill() {
+  const pillId = "file-pill";
+  let pill = document.getElementById(pillId);
+  if (fileInput && fileInput.files && fileInput.files.length > 0) {
+    const name = fileInput.files[0].name;
+    if (!pill) {
+      pill = document.createElement("span");
+      pill.id = pillId;
+      pill.style.marginLeft = "8px";
+      pill.style.fontSize = "12px";
+      pill.style.padding = "2px 8px";
+      pill.style.border = "1px solid #d0d5dd";
+      pill.style.borderRadius = "9999px";
+      pill.style.background = "#fff";
+      pill.style.color = "#111827";
+      document.getElementById("input-container").insertBefore(pill, sendBtn);
+    }
+    pill.textContent = name;
+  } else if (pill) {
+    pill.remove();
+  }
+}
+
+// Keep Send enabled if there's either text or a selected image
+function hasImageSelected() {
+  return !!(fileInput && fileInput.files && fileInput.files.length > 0);
+}
+
+// ---- Send button enable/disable -------------------------------------------
+function syncSendDisabled() {
+  const hasText = inputEl.textContent.trim() !== "";
+  sendBtn.disabled = !(hasText || hasImageSelected());
+}
+syncSendDisabled();
+
+if (fileInput) {
+  fileInput.addEventListener("change", () => {
+    showSelectedFilePill();
+    syncSendDisabled();
+  });
+}
+
 // Welcome message
 const welcomeContainer = document.getElementById("welcome-container");
 const welcomeTextEl    = document.getElementById("welcome-text");
@@ -97,12 +151,6 @@ function replaceDotsWithContent(contentDiv, text) {
   contentDiv.textContent = text;
 }
 
-// ---- Send button enable/disable -------------------------------------------
-function syncSendDisabled() {
-  sendBtn.disabled = inputEl.textContent.trim() === "";
-}
-syncSendDisabled();
-
 // ---- Welcome flow -------------------------------------------
 function showRobotGif() {
   if (robotGif && !welcomeCanceled) {
@@ -181,6 +229,20 @@ function cancelWelcomeIfPending() {
   // If welcome has started, let it continue and stay visible
 }
 
+function addImagePreview(container, file) {
+  const url = URL.createObjectURL(file);
+  const img = document.createElement("img");
+  img.src = url;
+  img.alt = file.name || "attachment";
+  img.style.display = "block";
+  img.style.maxWidth = "280px";
+  img.style.maxHeight = "220px";
+  img.style.borderRadius = "10px";
+  img.style.marginTop = "8px";
+  img.onload = () => URL.revokeObjectURL(url);
+  container.appendChild(img);
+}
+
 // Start the flow once DOM is ready
 window.addEventListener("DOMContentLoaded", () => {
   // Show robot GIF immediately
@@ -202,54 +264,64 @@ inputEl.addEventListener("input", () => {
 // ---- Send message ----------------------------------------------------------
 async function sendMessage() {
   const userText = inputEl.textContent.trim();
-  if (!userText) return;
+  const hasImage = hasImageSelected();
+  if (!userText && !hasImage) return;
 
-  // Cancel GIF/welcome only if it hasn't started displaying yet
   if (!welcomeStarted) {
     cancelWelcomeIfPending();
   }
-  // If welcome has already started, it remains visible
 
   // Add user message
   const userMsg = document.createElement("div");
   userMsg.className = "message user";
-  userMsg.textContent = userText;
+  userMsg.textContent = userText || (hasImage ? "(image)" : "");
   chatBox.appendChild(userMsg);
 
-  // Clear input + keep UI tidy
+  // Show a small preview if an image is attached
+  if (hasImage) {
+    addImagePreview(userMsg, fileInput.files[0]);
+  }
+
+  // Clear input text and update state
   inputEl.textContent = "";
   syncSendDisabled();
   chatBox.scrollTop = chatBox.scrollHeight;
 
-  // Create bot message with avatar and typing dots
+  // Create bot message with typing dots
   const botMsg = createBotMessage();
   const botContent = botMsg.querySelector('.bot-content');
   chatBox.appendChild(botMsg);
-  
-  // Show typing dots
   addTypingDots(botContent);
   chatBox.scrollTop = chatBox.scrollHeight;
 
   try {
-    const res = await fetch("/chat", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ query: userText })
-    });
+    let data;
+    if (hasImage) {
+      const form = new FormData();
+      form.append("image", fileInput.files[0]);
+      form.append("query", userText);
+      const res = await fetch("/chat-image", { method: "POST", body: form });
+      data = await res.json();
+    } else {
+      const res = await fetch("/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ query: userText })
+      });
+      data = await res.json();
+    }
 
-    const data = await res.json();
     const botText = data.response || "Sorry, I couldn't understand that.";
-
-    // Replace typing dots with actual response
     replaceDotsWithContent(botContent, "");
-    
-    // Use showBotResponseSteps with the content div
     showBotResponseSteps(botText, botContent);
-    
   } catch (err) {
-    // Replace typing dots with error message
     replaceDotsWithContent(botContent, "Network error. Please try again.");
   } finally {
+    // Reset file input and pill if we sent an image
+    if (hasImage) {
+      fileInput.value = "";
+      showSelectedFilePill();
+    }
     chatBox.scrollTop = chatBox.scrollHeight;
   }
 }
