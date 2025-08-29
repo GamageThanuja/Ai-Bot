@@ -23,14 +23,20 @@ export function showBotResponseSteps(botText, contentDiv, delay = 1200) {
   let currentStep = 0;
   let nextBtn = null;
 
-  function showStep(stepText) {
-    // Clear the content div for this step
-    contentDiv.innerHTML = '';
+  function showStep(stepText, isFirstStep = false) {
+    // Don't clear the content div - append to it instead
+    if (isFirstStep) {
+      contentDiv.innerHTML = '';
+    }
     
     // Get the parent bot message div to append the Next button after it
     const botMessageDiv = contentDiv.parentElement;
     const chatBox = botMessageDiv.parentElement;
 
+    // Create a container for this step to keep it separate
+    const stepContainer = document.createElement("div");
+    stepContainer.style.marginTop = currentStep > 0 ? "16px" : "0";
+    
     // Format lines with bullet points if they start with '-'
     const lines = stepText.split("\n");
     let currentLine = 0;
@@ -45,7 +51,7 @@ export function showBotResponseSteps(botText, contentDiv, delay = 1200) {
             ul.style.margin = "8px 0 0 18px";
             ul.style.padding = "0";
             ul.style.listStyleType = "disc";
-            contentDiv.appendChild(ul);
+            stepContainer.appendChild(ul);
           }
           const li = document.createElement("li");
           li.textContent = line.replace(/^\s*-\s*/, "");
@@ -55,7 +61,7 @@ export function showBotResponseSteps(botText, contentDiv, delay = 1200) {
           const p = document.createElement("p");
           p.textContent = line;
           p.style.margin = "0 0 4px 0";
-          contentDiv.appendChild(p);
+          stepContainer.appendChild(p);
           ul = null; // Reset ul when we hit a non-list item
         }
         chatBox.scrollTop = chatBox.scrollHeight;
@@ -64,6 +70,11 @@ export function showBotResponseSteps(botText, contentDiv, delay = 1200) {
       } else {
         // Show Next button if more steps remain
         if (currentStep < steps.length - 1) {
+          // Remove existing Next button if any
+          if (nextBtn) {
+            nextBtn.remove();
+          }
+          
           nextBtn = document.createElement("button");
           nextBtn.textContent = "Next";
           nextBtn.style.marginTop = "6px";
@@ -82,14 +93,17 @@ export function showBotResponseSteps(botText, contentDiv, delay = 1200) {
           nextBtn.onclick = () => {
             nextBtn.remove();
             currentStep++;
-            showStep(steps[currentStep]);
+            showStep(steps[currentStep], false); // Not first step, so don't clear content
           };
           chatBox.scrollTop = chatBox.scrollHeight;
         }
       }
     }
+    
+    // Append the step container to the main content div
+    contentDiv.appendChild(stepContainer);
     revealNextLine();
   }
 
-  showStep(steps[currentStep]);
+  showStep(steps[currentStep], true); // First step, so clear content
 }

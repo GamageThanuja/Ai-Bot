@@ -137,23 +137,14 @@ function startWelcome() {
   // Hide robot GIF as we transition to welcome message
   hideRobotGif();
 
-  // Create a special welcome container at the bottom left
-  const welcomeWrapper = document.createElement("div");
-  welcomeWrapper.id = "welcome-wrapper";
-  welcomeWrapper.style.position = "fixed";
-  welcomeWrapper.style.bottom = "90px"; // Same position as GIF
-  welcomeWrapper.style.left = "20px";
-  welcomeWrapper.style.zIndex = "100";
-  welcomeWrapper.style.maxWidth = "400px";
-  
-  // Create welcome message with avatar and typing dots
+  // Create welcome message in the chat-box instead of fixed position
   const welcomeMsg = createBotMessage();
   const welcomeContent = welcomeMsg.querySelector('.bot-content');
-  welcomeWrapper.appendChild(welcomeMsg);
-  document.body.appendChild(welcomeWrapper);
+  chatBox.appendChild(welcomeMsg);
   
   // Show typing dots initially
   addTypingDots(welcomeContent);
+  chatBox.scrollTop = chatBox.scrollHeight;
 
   // After 2 seconds, replace dots with actual welcome text
   setTimeout(() => {
@@ -167,10 +158,11 @@ function startWelcome() {
     welcomeTypingTimer = setInterval(() => {
       if (i < chars.length) {
         welcomeContent.textContent += chars[i++];
+        chatBox.scrollTop = chatBox.scrollHeight;
       } else {
         clearInterval(welcomeTypingTimer);
         welcomeTypingTimer = null;
-        // Welcome message stays visible throughout the entire chat
+        chatBox.scrollTop = chatBox.scrollHeight;
       }
     }, SPEED);
   }, 2000);
