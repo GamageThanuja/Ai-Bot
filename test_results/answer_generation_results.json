@@ -1,0 +1,715 @@
+{
+  "test_summary": {
+    "metrics": {
+      "avg_quality_score": 0.7708333333333333,
+      "quality_distribution": {
+        "excellent": 13,
+        "good": 2,
+        "fair": 3,
+        "poor": 2
+      },
+      "hallucination_rate": 0.1,
+      "default_response_rate": 0.0,
+      "refusal_accuracy": 0.0,
+      "avg_answer_length": 465.15,
+      "total_cases": 20
+    },
+    "category_performance": {
+      "reservation_management": {
+        "total": 3,
+        "scores": [
+          1.0,
+          0.875,
+          1.0
+        ],
+        "excellent": 3,
+        "good": 0,
+        "fair": 0,
+        "poor": 0,
+        "hallucinations": 0,
+        "avg_score": 0.9583333333333334,
+        "hallucination_rate": 0.0
+      },
+      "guest_operations": {
+        "total": 2,
+        "scores": [
+          1.0,
+          1.0
+        ],
+        "excellent": 2,
+        "good": 0,
+        "fair": 0,
+        "poor": 0,
+        "hallucinations": 0,
+        "avg_score": 1.0,
+        "hallucination_rate": 0.0
+      },
+      "authentication": {
+        "total": 1,
+        "scores": [
+          1.0
+        ],
+        "excellent": 1,
+        "good": 0,
+        "fair": 0,
+        "poor": 0,
+        "hallucinations": 0,
+        "avg_score": 1.0,
+        "hallucination_rate": 0.0
+      },
+      "meal_management": {
+        "total": 1,
+        "scores": [
+          1.0
+        ],
+        "excellent": 1,
+        "good": 0,
+        "fair": 0,
+        "poor": 0,
+        "hallucinations": 0,
+        "avg_score": 1.0,
+        "hallucination_rate": 0.0
+      },
+      "property_setup": {
+        "total": 3,
+        "scores": [
+          0.5,
+          0.625,
+          0.5
+        ],
+        "excellent": 0,
+        "good": 1,
+        "fair": 2,
+        "poor": 0,
+        "hallucinations": 0,
+        "avg_score": 0.5416666666666666,
+        "hallucination_rate": 0.0
+      },
+      "reservation_modifications": {
+        "total": 2,
+        "scores": [
+          0.875,
+          0.5
+        ],
+        "excellent": 1,
+        "good": 0,
+        "fair": 1,
+        "poor": 0,
+        "hallucinations": 0,
+        "avg_score": 0.6875,
+        "hallucination_rate": 0.0
+      },
+      "financial_operations": {
+        "total": 2,
+        "scores": [
+          1.0,
+          1.0
+        ],
+        "excellent": 2,
+        "good": 0,
+        "fair": 0,
+        "poor": 0,
+        "hallucinations": 0,
+        "avg_score": 1.0,
+        "hallucination_rate": 0.0
+      },
+      "guest_management": {
+        "total": 2,
+        "scores": [
+          1.0,
+          0.6666666666666666
+        ],
+        "excellent": 1,
+        "good": 1,
+        "fair": 0,
+        "poor": 0,
+        "hallucinations": 0,
+        "avg_score": 0.8333333333333333,
+        "hallucination_rate": 0.0
+      },
+      "account_management": {
+        "total": 1,
+        "scores": [
+          1.0
+        ],
+        "excellent": 1,
+        "good": 0,
+        "fair": 0,
+        "poor": 0,
+        "hallucinations": 0,
+        "avg_score": 1.0,
+        "hallucination_rate": 0.0
+      },
+      "checkout_process": {
+        "total": 1,
+        "scores": [
+          0.875
+        ],
+        "excellent": 1,
+        "good": 0,
+        "fair": 0,
+        "poor": 0,
+        "hallucinations": 0,
+        "avg_score": 0.875,
+        "hallucination_rate": 0.0
+      },
+      "unanswerable": {
+        "total": 2,
+        "scores": [
+          0.0,
+          0.0
+        ],
+        "excellent": 0,
+        "good": 0,
+        "fair": 0,
+        "poor": 2,
+        "hallucinations": 2,
+        "avg_score": 0.0,
+        "hallucination_rate": 1.0
+      }
+    }
+  },
+  "detailed_results": [
+    {
+      "question": "How do I create a new reservation?",
+      "generated_answer": "To create a new reservation in Hotel Mate, follow these steps:\n\n1. Navigate to the Front Desk:\n   - From the left sidebar menu, click on Reservation.\n   - Under Reservation, click on Front Desk.\n\n2. Open Quick Reservation:\n   - On the top right corner of the Front Desk screen, click Quick Reservation.\n   - A Quick Reservation drawer will slide in from the right.\n\n3. Fill in Reservation Details in the Quick Reservation form:\n   - Basic Information:\n     - Select or add a Travel Agent.\n     - Enter a Booking Reference ID.\n     - Choose Check-in and Check-out dates.\n     - Nights will be calculated automatically (or adjust if needed).\n     - Select the booking Status (e.g., Confirm).\n     - Enter Guest Name, Mobile number, Email, and Country.\n   - Additional Details (optional):\n     - Add Additional Notes (e.g., dietary preferences).\n     - Enter Tour Number if applicable.\n     - Enter Group Name if part of a group booking.\n     - Optionally mark the booking as checked-in if for the same day.\n\n4. Save the Reservation:\n   - Click the Reserve button at the bottom of the form.\n\n5. View the Reservation:\n   - After saving, the reservation will appear on the Front Desk grid under the assigned room and date range, showing guest name and room details.\n\nThis completes the creation of a new reservation.",
+      "test_case_id": 1,
+      "category": "reservation_management",
+      "difficulty": "medium",
+      "inclusion_score": 1.0,
+      "coverage_score": 1.0,
+      "quality_score": 1.0,
+      "quality_category": "excellent",
+      "included_items": [
+        "Quick Reservation",
+        "Front Desk",
+        "Reserve button"
+      ],
+      "missing_required": [],
+      "hallucinated_items": [],
+      "covered_points": [
+        "Navigate to Reservation → Front Desk from left sidebar",
+        "Click Quick Reservation in top right corner",
+        "Fill in basic information (travel agent, booking ref, check-in/out dates)",
+        "Add room details (room type, adults/children, rate)",
+        "Enter guest information (name, contact details)",
+        "Click Reserve button to save"
+      ],
+      "is_default_response": false,
+      "answer_length": 1311,
+      "has_hallucinations": false
+    },
+    {
+      "question": "What are the steps to check in a guest?",
+      "generated_answer": "The steps to check in a guest using Hotel Mate are as follows:\n\nStep 1 – Open the Reservation\n1. From the sidebar, go to Reservation → Front Desk.\n2. On the calendar grid, click on the reservation you want to check in.\n3. The Reservation Drawer will open on the right side, showing details such as:\n   - Room type & number\n   - Reservation number & booking reference\n   - Source (e.g., Travel Agent)\n   - Booker details (who made the booking)\n   - Current status (e.g., Confirmed Reservation)\n\nStep 2 – Select Check-In Action\n1. In the Reservation Drawer, click on the Actions dropdown (top right).\n2. Choose Check-In from the list.\n3. A Check-In Drawer will appear.\n\nStep 3 – Enter Guest Check-In Details\nFill in the required information about the guest(s) staying in the room:\n- Title & Guest Name – The actual guest’s details.\n- Date of Birth – Enter DOB for identity tracking.\n- Country – Guest’s nationality.\n- Email & Phone – Contact details for communication.\n- ID Type – Passport, Driver’s License, or NIC.\n- ID Number – Identification number from the chosen ID.\n- Upload ID – Upload a scanned copy/photo of the ID (passport, license, etc.).\n- Repeat Guest – Mark if the guest has stayed before.\n- Special Requests – Record any guest-specific requests (e.g., vegetarian meals, late checkout).\n(Tip: Click Show Additional Fields if more guest data is required.)\n\nStep 4 – Complete Check-In\n1. Once all details are filled, click Complete Check-In.\n2. The Check-In drawer will close automatically.\n3. The reservation status will update to Checked-in (shown with a green label).\n\nStep 5 – Guest Details Confirmation\n1. Open the Guests tab in the reservation drawer.\n2. The checked-in guest’s information will now appear here, including:\n   - Guest Name\n   - NIC/Passport\n   - Gender\n   - Nationality\n   - Phone No\n   - Repeat guest flag\n   - VIP status\n\nThis confirms that the Guest (staying) and the Booker (who reserved) can be different people, and both sets of details are stored separately.",
+      "test_case_id": 2,
+      "category": "guest_operations",
+      "difficulty": "medium",
+      "inclusion_score": 1.0,
+      "coverage_score": 1.0,
+      "quality_score": 1.0,
+      "quality_category": "excellent",
+      "included_items": [
+        "Actions dropdown",
+        "Check-In",
+        "Complete Check-In",
+        "ID type"
+      ],
+      "missing_required": [],
+      "hallucinated_items": [],
+      "covered_points": [
+        "Open reservation from Front Desk grid",
+        "Click Actions dropdown and select Check-In",
+        "Fill guest details (name, date of birth, country, contact info)",
+        "Select ID type and upload ID document",
+        "Mark repeat guest if applicable",
+        "Add special requests if any",
+        "Click Complete Check-In"
+      ],
+      "is_default_response": false,
+      "answer_length": 1999,
+      "has_hallucinations": false
+    },
+    {
+      "question": "How long are QR codes valid for login?",
+      "generated_answer": "QR codes for login are valid for 60 seconds. After they expire, you need to click \"Generate New Code\" to refresh and get a new QR code.",
+      "test_case_id": 3,
+      "category": "authentication",
+      "difficulty": "easy",
+      "inclusion_score": 1.0,
+      "coverage_score": 1.0,
+      "quality_score": 1.0,
+      "quality_category": "excellent",
+      "included_items": [
+        "60 seconds",
+        "Generate New Code"
+      ],
+      "missing_required": [],
+      "hallucinated_items": [],
+      "covered_points": [
+        "QR codes are valid for 60 seconds",
+        "After expiration, click Generate New Code to refresh"
+      ],
+      "is_default_response": false,
+      "answer_length": 135,
+      "has_hallucinations": false
+    },
+    {
+      "question": "What meal plan options are available?",
+      "generated_answer": "The available meal plan options are:\n\n- Bed & Breakfast\n- Half Board\n- Full Board\n- All-Inclusive (as indicated in the review step)",
+      "test_case_id": 4,
+      "category": "meal_management",
+      "difficulty": "easy",
+      "inclusion_score": 1.0,
+      "coverage_score": 1.0,
+      "quality_score": 1.0,
+      "quality_category": "excellent",
+      "included_items": [
+        "Bed & Breakfast",
+        "Half Board",
+        "Full Board"
+      ],
+      "missing_required": [],
+      "hallucinated_items": [],
+      "covered_points": [
+        "Bed & Breakfast",
+        "Half Board",
+        "Full Board"
+      ],
+      "is_default_response": false,
+      "answer_length": 131,
+      "has_hallucinations": false
+    },
+    {
+      "question": "Can I change my home currency after property setup?",
+      "generated_answer": "No, once you have selected your home currency during the property setup in HotelMate, you cannot change it later.",
+      "test_case_id": 5,
+      "category": "property_setup",
+      "difficulty": "easy",
+      "inclusion_score": 0.3333333333333333,
+      "coverage_score": 0.6666666666666666,
+      "quality_score": 0.5,
+      "quality_category": "fair",
+      "included_items": [
+        "cannot change"
+      ],
+      "missing_required": [
+        "after setup",
+        "accounting"
+      ],
+      "hallucinated_items": [],
+      "covered_points": [
+        "No, you cannot change the home currency after setup",
+        "Choose carefully during initial setup"
+      ],
+      "is_default_response": false,
+      "answer_length": 113,
+      "has_hallucinations": false
+    },
+    {
+      "question": "What subscription plan costs are available?",
+      "generated_answer": "The available subscription plan costs are:\n- $29 per month for the first 10 rooms.\n- $2 per month for each additional room beyond 10.",
+      "test_case_id": 6,
+      "category": "property_setup",
+      "difficulty": "easy",
+      "inclusion_score": 0.25,
+      "coverage_score": 1.0,
+      "quality_score": 0.625,
+      "quality_category": "good",
+      "included_items": [
+        "first 10 rooms"
+      ],
+      "missing_required": [
+        "$29/month",
+        "$2/month",
+        "extra room"
+      ],
+      "hallucinated_items": [],
+      "covered_points": [
+        "$29/month for the first 10 rooms",
+        "$2/month per extra room beyond 10",
+        "Adjust room count using slider"
+      ],
+      "is_default_response": false,
+      "answer_length": 133,
+      "has_hallucinations": false
+    },
+    {
+      "question": "How do I extend a guest's stay?",
+      "generated_answer": "To extend a guest's stay, follow these steps:\n\n1. Open the Reservation:\n   - From the sidebar, go to Reservation → Front Desk.\n   - Locate and select the reservation with status Checked-in that you want to extend.\n   - The Reservation Drawer will open on the right side.\n\n2. Choose Extend Stay Action:\n   - In the reservation drawer, click the Actions dropdown (top right).\n   - Select Extend Stay.\n   - A new Extend Stay drawer will appear.\n\n3. Enter Extension Details:\n   - Choose the new check-out date using the calendar picker under \"Extend Till (Date)\".\n   - Enter the daily room charge for the extended stay (including taxes).\n   - You can also change the currency if needed.\n\n4. Confirm Extension:\n   - Click Extend Stay.\n   - The drawer will close automatically.\n   - The reservation’s check-out date will be updated in the system.\n   - Additional nights and charges will be reflected in the guest’s financials.\n\nNote: Extensions can only be processed for reservations with status Checked-in.",
+      "test_case_id": 7,
+      "category": "reservation_modifications",
+      "difficulty": "medium",
+      "inclusion_score": 0.75,
+      "coverage_score": 1.0,
+      "quality_score": 0.875,
+      "quality_category": "excellent",
+      "included_items": [
+        "Extend Stay",
+        "new check-out date",
+        "room charge"
+      ],
+      "missing_required": [
+        "checked-in reservation"
+      ],
+      "hallucinated_items": [],
+      "covered_points": [
+        "Select checked-in reservation from Front Desk",
+        "Click Actions dropdown and select Extend Stay",
+        "Choose new check-out date (Extend Till)",
+        "Enter room charge per day including taxes",
+        "Click Extend Stay to confirm"
+      ],
+      "is_default_response": false,
+      "answer_length": 1001,
+      "has_hallucinations": false
+    },
+    {
+      "question": "What post charge types can I add?",
+      "generated_answer": "You can add the following post charge types to a reservation:\n\n- Late Check-out Fee  \n- Early Check-in Fee  \n- Airport Pick-up / Drop / Round Trip  \n- Spa Charges  \n- Laundry Charges  \n- Excursion Charges  \n- Meals (Dinner, Lunch, Breakfast)  \n- Location Charges  \n- Room Charges  \n- No-Show Charges",
+      "test_case_id": 8,
+      "category": "financial_operations",
+      "difficulty": "medium",
+      "inclusion_score": 1.0,
+      "coverage_score": 1.0,
+      "quality_score": 1.0,
+      "quality_category": "excellent",
+      "included_items": [
+        "Late Check-out Fee",
+        "Spa Charges",
+        "Laundry Charges",
+        "Meals"
+      ],
+      "missing_required": [],
+      "hallucinated_items": [],
+      "covered_points": [
+        "Late Check-out Fee",
+        "Early Check-in Fee",
+        "Airport Pick-up/Drop/Round Trip",
+        "Spa Charges",
+        "Laundry Charges",
+        "Excursion Charges",
+        "Meals (Dinner, Lunch, Breakfast)",
+        "Room Charges",
+        "No-Show Charges"
+      ],
+      "is_default_response": false,
+      "answer_length": 299,
+      "has_hallucinations": false
+    },
+    {
+      "question": "What room change reasons are available?",
+      "generated_answer": "The available reasons for a room change are:\n\n- On Guest Request\n- Maintenance Issues\n- Cleanliness Concerns\n- Noise Disturbance\n- Room Size or Layout\n- Room View Preference\n- Safety Concerns\n- Allergies or Health Concerns\n- Upgrade Offers\n- Other",
+      "test_case_id": 9,
+      "category": "guest_operations",
+      "difficulty": "medium",
+      "inclusion_score": 1.0,
+      "coverage_score": 1.0,
+      "quality_score": 1.0,
+      "quality_category": "excellent",
+      "included_items": [
+        "Guest Request",
+        "Maintenance Issues",
+        "Noise Disturbance"
+      ],
+      "missing_required": [],
+      "hallucinated_items": [],
+      "covered_points": [
+        "On Guest Request",
+        "Maintenance Issues",
+        "Cleanliness Concerns",
+        "Noise Disturbance",
+        "Room Size or Layout",
+        "Room View Preference",
+        "Safety Concerns",
+        "Allergies or Health Concerns"
+      ],
+      "is_default_response": false,
+      "answer_length": 247,
+      "has_hallucinations": false
+    },
+    {
+      "question": "How many steps are in the property creation process?",
+      "generated_answer": "There are 18 steps in the property creation process in HotelMate.",
+      "test_case_id": 10,
+      "category": "property_setup",
+      "difficulty": "easy",
+      "inclusion_score": 0.0,
+      "coverage_score": 1.0,
+      "quality_score": 0.5,
+      "quality_category": "fair",
+      "included_items": [],
+      "missing_required": [
+        "18 simple steps",
+        "guided process"
+      ],
+      "hallucinated_items": [],
+      "covered_points": [
+        "18 simple steps",
+        "Guided process walks you through setup"
+      ],
+      "is_default_response": false,
+      "answer_length": 65,
+      "has_hallucinations": false
+    },
+    {
+      "question": "What payment methods are accepted?",
+      "generated_answer": "The accepted payment methods include Credit Card, Cash, Bank Transfer, and Online Payment.",
+      "test_case_id": 11,
+      "category": "financial_operations",
+      "difficulty": "easy",
+      "inclusion_score": 1.0,
+      "coverage_score": 1.0,
+      "quality_score": 1.0,
+      "quality_category": "excellent",
+      "included_items": [
+        "Credit Card",
+        "Cash",
+        "Online Payment"
+      ],
+      "missing_required": [],
+      "hallucinated_items": [],
+      "covered_points": [
+        "Credit Card",
+        "Cash",
+        "Bank Transfer",
+        "Online Payment"
+      ],
+      "is_default_response": false,
+      "answer_length": 90,
+      "has_hallucinations": false
+    },
+    {
+      "question": "What happens when I cancel a reservation?",
+      "generated_answer": "When you cancel a reservation in the system, the following happens:\n\n- Cancellation is only possible before the guest's check-in.\n- You must select a cancellation reason from a dropdown list (such as Entry error, On Guest Request, Visa or Travel Restrictions, Change in Travel Plans, Weather Concerns, Date Change, Unavailability, or Over Booked).\n- After confirming the cancellation, the reservation status updates to \"Cancelled\" and is shown with a grey \"Cancelled\" tag.\n- Once cancelled, the booking is closed, and no further actions like Check-in or Check-out can be performed on that reservation.",
+      "test_case_id": 12,
+      "category": "reservation_management",
+      "difficulty": "medium",
+      "inclusion_score": 0.75,
+      "coverage_score": 1.0,
+      "quality_score": 0.875,
+      "quality_category": "excellent",
+      "included_items": [
+        "cancellation reason",
+        "status updates",
+        "Cancelled"
+      ],
+      "missing_required": [
+        "before check-in"
+      ],
+      "hallucinated_items": [],
+      "covered_points": [
+        "Select cancellation reason from dropdown",
+        "Reservation status updates to Cancelled",
+        "Booking is closed and no further actions possible",
+        "Cancellation only possible before check-in"
+      ],
+      "is_default_response": false,
+      "answer_length": 601,
+      "has_hallucinations": false
+    },
+    {
+      "question": "What document types can I upload for guests?",
+      "generated_answer": "You can upload the following document types for guests:\n- Passport/NIC\n- Booking Voucher\n- Payment Slip\n- Visa Document\n- Other",
+      "test_case_id": 13,
+      "category": "guest_management",
+      "difficulty": "easy",
+      "inclusion_score": 1.0,
+      "coverage_score": 1.0,
+      "quality_score": 1.0,
+      "quality_category": "excellent",
+      "included_items": [
+        "Passport/NIC",
+        "Booking Voucher",
+        "Payment Slip",
+        "Visa Document"
+      ],
+      "missing_required": [],
+      "hallucinated_items": [],
+      "covered_points": [
+        "Passport/NIC",
+        "Booking Voucher",
+        "Payment Slip",
+        "Visa Document",
+        "Other"
+      ],
+      "is_default_response": false,
+      "answer_length": 127,
+      "has_hallucinations": false
+    },
+    {
+      "question": "How do I verify my email during signup?",
+      "generated_answer": "To verify your email during signup for HotelMate, follow these steps:\n\n1. After providing your valid email address, check your inbox for a 4-digit verification code sent by HotelMate.\n2. Enter the 4-digit code into the verification boxes on the signup page.\n3. If you do not receive the code, click the \"Resend code\" option to get a new one.\n4. Once the code is correctly entered and verified, click Continue to proceed with the signup process.",
+      "test_case_id": 14,
+      "category": "account_management",
+      "difficulty": "easy",
+      "inclusion_score": 1.0,
+      "coverage_score": 1.0,
+      "quality_score": 1.0,
+      "quality_category": "excellent",
+      "included_items": [
+        "4-digit verification code",
+        "verification boxes",
+        "Resend code"
+      ],
+      "missing_required": [],
+      "hallucinated_items": [],
+      "covered_points": [
+        "Check inbox for 4-digit verification code",
+        "Enter code in verification boxes",
+        "Click Resend code if not received",
+        "Click Continue after verification"
+      ],
+      "is_default_response": false,
+      "answer_length": 444,
+      "has_hallucinations": false
+    },
+    {
+      "question": "What information appears on the checkout invoice?",
+      "generated_answer": "The checkout invoice shows the following information:\n\n- Invoice type\n- Document number\n- POS center\n- Payment method\n- Credit amount\n- Debit amount\n- Total amount\n\nAdditionally, there are options to print the invoice, download it as a PDF, or email it directly to the guest.",
+      "test_case_id": 15,
+      "category": "checkout_process",
+      "difficulty": "medium",
+      "inclusion_score": 0.75,
+      "coverage_score": 1.0,
+      "quality_score": 0.875,
+      "quality_category": "excellent",
+      "included_items": [
+        "document number",
+        "payment method",
+        "total amount"
+      ],
+      "missing_required": [
+        "Folio Details"
+      ],
+      "hallucinated_items": [],
+      "covered_points": [
+        "Folio Details with invoice type",
+        "Document number",
+        "POS center",
+        "Payment method",
+        "Credit, debit amounts",
+        "Total amount"
+      ],
+      "is_default_response": false,
+      "answer_length": 275,
+      "has_hallucinations": false
+    },
+    {
+      "question": "What is the maximum room occupancy?",
+      "generated_answer": "The provided information does not specify the maximum room occupancy. To find out the maximum occupancy, you may need to check the specific room type details or hotel policy within the system or contact the hotel directly.",
+      "test_case_id": 16,
+      "category": "unanswerable",
+      "difficulty": "hard",
+      "refused_appropriately": false,
+      "should_refuse": true,
+      "quality_score": 0.0,
+      "quality_category": "poor",
+      "hallucinated_items": [
+        "maximum occupancy"
+      ],
+      "has_hallucinations": true,
+      "answer_length": 222
+    },
+    {
+      "question": "What are the hotel's operating hours?",
+      "generated_answer": "The provided information does not include the hotel's operating hours.",
+      "test_case_id": 17,
+      "category": "unanswerable",
+      "difficulty": "hard",
+      "refused_appropriately": false,
+      "should_refuse": true,
+      "quality_score": 0.0,
+      "quality_category": "poor",
+      "hallucinated_items": [
+        "operating hours"
+      ],
+      "has_hallucinations": true,
+      "answer_length": 70
+    },
+    {
+      "question": "How do I edit a reservation after creation?",
+      "generated_answer": "To edit a reservation after it has been created in Hotel Mate, follow these steps:\n\n1. Go to Reservation → Front Desk from the left sidebar.\n2. On the Front Desk grid, click on the existing reservation you want to edit (highlighted by guest name and room).\n3. A Reservation Drawer will open on the right side showing the guest name and reservation status.\n4. In the top-right corner of the drawer, click the Actions dropdown.\n5. Select \"Edit\" from the dropdown menu.\n6. An Edit Booking Details drawer will appear with four tabs: Overview, Financials, Guests, and Attachments.\n7. In the Overview tab, you can update room details (room type, number, occupancy), reservation details (travel agent, booking reference, check-in/out dates), currency, and booker details.\n8. In the Financials tab, you can adjust rates, discounts, and view invoice records.\n9. You can also update guest contact information and add additional notes or group details.\n10. After making the necessary changes, click the \"Reserve\" button at the bottom to save the reservation.\n11. The updated reservation will then appear on the Front Desk grid with the changes reflected.\n\nThis process allows you to modify booking details, rates, guest info, and more after the reservation has been created.",
+      "test_case_id": 18,
+      "category": "reservation_management",
+      "difficulty": "medium",
+      "inclusion_score": 1.0,
+      "coverage_score": 1.0,
+      "quality_score": 1.0,
+      "quality_category": "excellent",
+      "included_items": [
+        "Actions dropdown",
+        "Edit",
+        "four tabs",
+        "Overview",
+        "Financials",
+        "Save"
+      ],
+      "missing_required": [],
+      "hallucinated_items": [],
+      "covered_points": [
+        "Click on existing reservation from Front Desk grid",
+        "Click Actions dropdown and select Edit",
+        "Use four tabs: Overview, Financials, Guests, Attachments",
+        "Overview tab for room and reservation details",
+        "Financials tab for rates and deposits",
+        "Click Save after making changes"
+      ],
+      "is_default_response": false,
+      "answer_length": 1263,
+      "has_hallucinations": false
+    },
+    {
+      "question": "When can I extend a guest's stay?",
+      "generated_answer": "You can extend a guest's stay only if the reservation status is Checked-in. Extensions can be processed by selecting the Checked-in reservation and using the Extend Stay feature to update the check-out date and apply additional charges.",
+      "test_case_id": 19,
+      "category": "reservation_modifications",
+      "difficulty": "easy",
+      "inclusion_score": 0.0,
+      "coverage_score": 1.0,
+      "quality_score": 0.5,
+      "quality_category": "fair",
+      "included_items": [],
+      "missing_required": [
+        "checked-in reservations",
+        "checked-in status"
+      ],
+      "hallucinated_items": [],
+      "covered_points": [
+        "Only for checked-in reservations",
+        "Guest must currently have checked-in status"
+      ],
+      "is_default_response": false,
+      "answer_length": 236,
+      "has_hallucinations": false
+    },
+    {
+      "question": "What is the difference between booker and guest?",
+      "generated_answer": "The difference between the booker and the guest is that the booker is the person who makes the reservation, while the guest is the person who actually stays at the hotel. \n\n- The booker could be a travel agent, company, or someone booking on behalf of another person.\n- The guest is the individual who checks in and stays at the hotel.\n\nBoth sets of details are stored separately in the system. The booker's information is recorded in the booking details, and the guest's information is confirmed and stored after check-in in the Guests tab.",
+      "test_case_id": 20,
+      "category": "guest_management",
+      "difficulty": "medium",
+      "inclusion_score": 0.3333333333333333,
+      "coverage_score": 1.0,
+      "quality_score": 0.6666666666666666,
+      "quality_category": "good",
+      "included_items": [
+        "stored separately"
+      ],
+      "missing_required": [
+        "made the reservation",
+        "staying in the room"
+      ],
+      "hallucinated_items": [],
+      "covered_points": [
+        "Booker is the person who made the reservation",
+        "Guest is the person actually staying in the room",
+        "Travel agent or company may book on behalf of guest",
+        "Both details stored separately in system"
+      ],
+      "is_default_response": false,
+      "answer_length": 541,
+      "has_hallucinations": false
+    }
+  ]
+}

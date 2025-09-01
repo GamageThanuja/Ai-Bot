@@ -1,0 +1,287 @@
+{
+  "answer_generation_test_cases": [
+    {
+      "id": 1,
+      "question": "How do I create a new reservation?",
+      "expected_answer_points": [
+        "Navigate to Reservation → Front Desk from left sidebar",
+        "Click Quick Reservation in top right corner",
+        "Fill in basic information (travel agent, booking ref, check-in/out dates)",
+        "Add room details (room type, adults/children, rate)",
+        "Enter guest information (name, contact details)",
+        "Click Reserve button to save"
+      ],
+      "must_include": ["Quick Reservation", "Front Desk", "Reserve button"],
+      "must_not_include": ["check-in process", "payment processing"],
+      "difficulty": "medium",
+      "category": "reservation_management"
+    },
+    {
+      "id": 2,
+      "question": "What are the steps to check in a guest?",
+      "expected_answer_points": [
+        "Open reservation from Front Desk grid",
+        "Click Actions dropdown and select Check-In",
+        "Fill guest details (name, date of birth, country, contact info)",
+        "Select ID type and upload ID document",
+        "Mark repeat guest if applicable",
+        "Add special requests if any",
+        "Click Complete Check-In"
+      ],
+      "must_include": ["Actions dropdown", "Check-In", "Complete Check-In", "ID type"],
+      "must_not_include": ["room assignment", "key programming"],
+      "difficulty": "medium",
+      "category": "guest_operations"
+    },
+    {
+      "id": 3,
+      "question": "How long are QR codes valid for login?",
+      "expected_answer_points": [
+        "QR codes are valid for 60 seconds",
+        "After expiration, click Generate New Code to refresh"
+      ],
+      "must_include": ["60 seconds", "Generate New Code"],
+      "must_not_include": ["password", "email verification"],
+      "difficulty": "easy",
+      "category": "authentication"
+    },
+    {
+      "id": 4,
+      "question": "What meal plan options are available?",
+      "expected_answer_points": [
+        "Bed & Breakfast",
+        "Half Board", 
+        "Full Board"
+      ],
+      "must_include": ["Bed & Breakfast", "Half Board", "Full Board"],
+      "must_not_include": ["continental breakfast", "buffet"],
+      "difficulty": "easy",
+      "category": "meal_management"
+    },
+    {
+      "id": 5,
+      "question": "Can I change my home currency after property setup?",
+      "expected_answer_points": [
+        "No, you cannot change the home currency after setup",
+        "This is used for all accounting and reports", 
+        "Choose carefully during initial setup"
+      ],
+      "must_include": ["cannot change", "after setup", "accounting"],
+      "must_not_include": ["contact support", "upgrade plan"],
+      "difficulty": "easy",
+      "category": "property_setup"
+    },
+    {
+      "id": 6,
+      "question": "What subscription plan costs are available?",
+      "expected_answer_points": [
+        "$29/month for the first 10 rooms",
+        "$2/month per extra room beyond 10",
+        "Adjust room count using slider"
+      ],
+      "must_include": ["$29/month", "first 10 rooms", "$2/month", "extra room"],
+      "must_not_include": ["annual discount", "enterprise plan"],
+      "difficulty": "easy",
+      "category": "property_setup"
+    },
+    {
+      "id": 7,
+      "question": "How do I extend a guest's stay?",
+      "expected_answer_points": [
+        "Select checked-in reservation from Front Desk",
+        "Click Actions dropdown and select Extend Stay", 
+        "Choose new check-out date (Extend Till)",
+        "Enter room charge per day including taxes",
+        "Click Extend Stay to confirm"
+      ],
+      "must_include": ["checked-in reservation", "Extend Stay", "new check-out date", "room charge"],
+      "must_not_include": ["additional payment", "room availability"],
+      "difficulty": "medium",
+      "category": "reservation_modifications"
+    },
+    {
+      "id": 8,
+      "question": "What post charge types can I add?",
+      "expected_answer_points": [
+        "Late Check-out Fee",
+        "Early Check-in Fee", 
+        "Airport Pick-up/Drop/Round Trip",
+        "Spa Charges",
+        "Laundry Charges",
+        "Excursion Charges",
+        "Meals (Dinner, Lunch, Breakfast)",
+        "Room Charges",
+        "No-Show Charges"
+      ],
+      "must_include": ["Late Check-out Fee", "Spa Charges", "Laundry Charges", "Meals"],
+      "must_not_include": ["minibar charges", "telephone charges"],
+      "difficulty": "medium",
+      "category": "financial_operations"
+    },
+    {
+      "id": 9,
+      "question": "What room change reasons are available?",
+      "expected_answer_points": [
+        "On Guest Request",
+        "Maintenance Issues",
+        "Cleanliness Concerns", 
+        "Noise Disturbance",
+        "Room Size or Layout",
+        "Room View Preference",
+        "Safety Concerns",
+        "Allergies or Health Concerns"
+      ],
+      "must_include": ["Guest Request", "Maintenance Issues", "Noise Disturbance"],
+      "must_not_include": ["overbooking", "system error"],
+      "difficulty": "medium",
+      "category": "guest_operations"
+    },
+    {
+      "id": 10,
+      "question": "How many steps are in the property creation process?",
+      "expected_answer_points": [
+        "18 simple steps",
+        "Guided process walks you through setup"
+      ],
+      "must_include": ["18 simple steps", "guided process"],
+      "must_not_include": ["17 steps", "20 steps"],
+      "difficulty": "easy",
+      "category": "property_setup"
+    },
+    {
+      "id": 11,
+      "question": "What payment methods are accepted?",
+      "expected_answer_points": [
+        "Credit Card",
+        "Cash",
+        "Bank Transfer", 
+        "Online Payment"
+      ],
+      "must_include": ["Credit Card", "Cash", "Online Payment"],
+      "must_not_include": ["cryptocurrency", "checks"],
+      "difficulty": "easy",
+      "category": "financial_operations"
+    },
+    {
+      "id": 12,
+      "question": "What happens when I cancel a reservation?",
+      "expected_answer_points": [
+        "Select cancellation reason from dropdown",
+        "Reservation status updates to Cancelled",
+        "Booking is closed and no further actions possible",
+        "Cancellation only possible before check-in"
+      ],
+      "must_include": ["cancellation reason", "status updates", "Cancelled", "before check-in"],
+      "must_not_include": ["refund processing", "penalty charges"],
+      "difficulty": "medium",
+      "category": "reservation_management"
+    },
+    {
+      "id": 13,
+      "question": "What document types can I upload for guests?",
+      "expected_answer_points": [
+        "Passport/NIC",
+        "Booking Voucher",
+        "Payment Slip",
+        "Visa Document",
+        "Other"
+      ],
+      "must_include": ["Passport/NIC", "Booking Voucher", "Payment Slip", "Visa Document"],
+      "must_not_include": ["driver license", "birth certificate"],
+      "difficulty": "easy",
+      "category": "guest_management"
+    },
+    {
+      "id": 14,
+      "question": "How do I verify my email during signup?",
+      "expected_answer_points": [
+        "Check inbox for 4-digit verification code",
+        "Enter code in verification boxes",
+        "Click Resend code if not received", 
+        "Click Continue after verification"
+      ],
+      "must_include": ["4-digit verification code", "verification boxes", "Resend code"],
+      "must_not_include": ["phone verification", "backup email"],
+      "difficulty": "easy",
+      "category": "account_management"
+    },
+    {
+      "id": 15,
+      "question": "What information appears on the checkout invoice?",
+      "expected_answer_points": [
+        "Folio Details with invoice type",
+        "Document number",
+        "POS center",
+        "Payment method", 
+        "Credit, debit amounts",
+        "Total amount"
+      ],
+      "must_include": ["Folio Details", "document number", "payment method", "total amount"],
+      "must_not_include": ["tax breakdown", "guest signature"],
+      "difficulty": "medium",
+      "category": "checkout_process"
+    },
+    {
+      "id": 16,
+      "question": "What is the maximum room occupancy?",
+      "expected_answer_points": [],
+      "must_include": [],
+      "must_not_include": ["4 guests", "maximum occupancy", "adults and children"],
+      "difficulty": "hard",
+      "category": "unanswerable",
+      "expected_response_type": "should_refuse"
+    },
+    {
+      "id": 17,
+      "question": "What are the hotel's operating hours?",
+      "expected_answer_points": [],
+      "must_include": [],
+      "must_not_include": ["24 hours", "9am to 5pm", "operating hours"],
+      "difficulty": "hard", 
+      "category": "unanswerable",
+      "expected_response_type": "should_refuse"
+    },
+    {
+      "id": 18,
+      "question": "How do I edit a reservation after creation?",
+      "expected_answer_points": [
+        "Click on existing reservation from Front Desk grid",
+        "Click Actions dropdown and select Edit",
+        "Use four tabs: Overview, Financials, Guests, Attachments",
+        "Overview tab for room and reservation details",
+        "Financials tab for rates and deposits", 
+        "Click Save after making changes"
+      ],
+      "must_include": ["Actions dropdown", "Edit", "four tabs", "Overview", "Financials", "Save"],
+      "must_not_include": ["delete reservation", "duplicate booking"],
+      "difficulty": "medium",
+      "category": "reservation_management"
+    },
+    {
+      "id": 19,
+      "question": "When can I extend a guest's stay?",
+      "expected_answer_points": [
+        "Only for checked-in reservations",
+        "Guest must currently have checked-in status"
+      ],
+      "must_include": ["checked-in reservations", "checked-in status"],
+      "must_not_include": ["confirmed reservations", "after checkout"],
+      "difficulty": "easy",
+      "category": "reservation_modifications"
+    },
+    {
+      "id": 20,
+      "question": "What is the difference between booker and guest?",
+      "expected_answer_points": [
+        "Booker is the person who made the reservation",
+        "Guest is the person actually staying in the room", 
+        "Travel agent or company may book on behalf of guest",
+        "Both details stored separately in system"
+      ],
+      "must_include": ["made the reservation", "staying in the room", "stored separately"],
+      "must_not_include": ["same person", "billing contact"],
+      "difficulty": "medium",
+      "category": "guest_management"
+    }
+  ]
+}

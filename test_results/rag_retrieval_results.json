@@ -1,0 +1,837 @@
+{
+  "test_summary": {
+    "overall_stats": {
+      "total_cases": 25,
+      "successful_retrievals": 25,
+      "total_keyword_matches": 119,
+      "total_keywords": 124
+    },
+    "metrics": {
+      "retrieval_success_rate": 1.0,
+      "keyword_coverage": 0.9596774193548387,
+      "avg_retrieval_score": 0.9573333333333334,
+      "doc_retrieval_rate": 1.0
+    },
+    "category_stats": {
+      "reservation_management": {
+        "total": 4,
+        "successful": 4,
+        "keyword_matches": 20,
+        "total_keywords": 22
+      },
+      "guest_operations": {
+        "total": 4,
+        "successful": 4,
+        "keyword_matches": 21,
+        "total_keywords": 21
+      },
+      "reservation_modifications": {
+        "total": 2,
+        "successful": 2,
+        "keyword_matches": 10,
+        "total_keywords": 10
+      },
+      "meal_management": {
+        "total": 1,
+        "successful": 1,
+        "keyword_matches": 4,
+        "total_keywords": 4
+      },
+      "financial_operations": {
+        "total": 5,
+        "successful": 5,
+        "keyword_matches": 23,
+        "total_keywords": 25
+      },
+      "checkout_process": {
+        "total": 1,
+        "successful": 1,
+        "keyword_matches": 5,
+        "total_keywords": 5
+      },
+      "authentication": {
+        "total": 2,
+        "successful": 2,
+        "keyword_matches": 9,
+        "total_keywords": 9
+      },
+      "property_setup": {
+        "total": 4,
+        "successful": 4,
+        "keyword_matches": 18,
+        "total_keywords": 19
+      },
+      "guest_management": {
+        "total": 1,
+        "successful": 1,
+        "keyword_matches": 5,
+        "total_keywords": 5
+      },
+      "account_management": {
+        "total": 1,
+        "successful": 1,
+        "keyword_matches": 4,
+        "total_keywords": 4
+      }
+    },
+    "difficulty_stats": {
+      "easy": {
+        "total": 11,
+        "successful": 11,
+        "keyword_matches": 49,
+        "total_keywords": 52
+      },
+      "medium": {
+        "total": 14,
+        "successful": 14,
+        "keyword_matches": 70,
+        "total_keywords": 72
+      }
+    }
+  },
+  "detailed_results": [
+    {
+      "test_case": {
+        "id": 1,
+        "question": "How do I create a new reservation?",
+        "expected_keywords": [
+          "quick reservation",
+          "front desk",
+          "reservation drawer",
+          "basic information",
+          "travel agent",
+          "booking ref"
+        ],
+        "difficulty": "easy",
+        "category": "reservation_management"
+      },
+      "evaluation": {
+        "has_relevant_content": true,
+        "keyword_matches": 6,
+        "total_keywords": 6,
+        "matched_keywords": [
+          "quick reservation",
+          "front desk",
+          "reservation drawer",
+          "basic information",
+          "travel agent",
+          "booking ref"
+        ],
+        "retrieval_score": 1.0,
+        "doc_count": 3
+      },
+      "retrieved_doc_count": 3
+    },
+    {
+      "test_case": {
+        "id": 2,
+        "question": "What steps are needed to check in a guest?",
+        "expected_keywords": [
+          "check-in drawer",
+          "guest details",
+          "date of birth",
+          "id type",
+          "complete check-in"
+        ],
+        "difficulty": "medium",
+        "category": "guest_operations"
+      },
+      "evaluation": {
+        "has_relevant_content": true,
+        "keyword_matches": 5,
+        "total_keywords": 5,
+        "matched_keywords": [
+          "check-in drawer",
+          "guest details",
+          "date of birth",
+          "id type",
+          "complete check-in"
+        ],
+        "retrieval_score": 1.0,
+        "doc_count": 3
+      },
+      "retrieved_doc_count": 3
+    },
+    {
+      "test_case": {
+        "id": 3,
+        "question": "How do I extend a guest's stay?",
+        "expected_keywords": [
+          "extend stay",
+          "checked-in reservation",
+          "extend till",
+          "room charge",
+          "per day"
+        ],
+        "difficulty": "medium",
+        "category": "reservation_modifications"
+      },
+      "evaluation": {
+        "has_relevant_content": true,
+        "keyword_matches": 5,
+        "total_keywords": 5,
+        "matched_keywords": [
+          "extend stay",
+          "checked-in reservation",
+          "extend till",
+          "room charge",
+          "per day"
+        ],
+        "retrieval_score": 1.0,
+        "doc_count": 3
+      },
+      "retrieved_doc_count": 3
+    },
+    {
+      "test_case": {
+        "id": 4,
+        "question": "What meal plan options can I select?",
+        "expected_keywords": [
+          "meal plan",
+          "bed & breakfast",
+          "half board",
+          "full board"
+        ],
+        "difficulty": "easy",
+        "category": "meal_management"
+      },
+      "evaluation": {
+        "has_relevant_content": true,
+        "keyword_matches": 4,
+        "total_keywords": 4,
+        "matched_keywords": [
+          "meal plan",
+          "bed & breakfast",
+          "half board",
+          "full board"
+        ],
+        "retrieval_score": 1.0,
+        "doc_count": 3
+      },
+      "retrieved_doc_count": 3
+    },
+    {
+      "test_case": {
+        "id": 5,
+        "question": "How do I add post charges to a reservation?",
+        "expected_keywords": [
+          "post charges",
+          "transaction type",
+          "late check-out fee",
+          "spa charges",
+          "amount"
+        ],
+        "difficulty": "medium",
+        "category": "financial_operations"
+      },
+      "evaluation": {
+        "has_relevant_content": true,
+        "keyword_matches": 5,
+        "total_keywords": 5,
+        "matched_keywords": [
+          "post charges",
+          "transaction type",
+          "late check-out fee",
+          "spa charges",
+          "amount"
+        ],
+        "retrieval_score": 1.0,
+        "doc_count": 3
+      },
+      "retrieved_doc_count": 3
+    },
+    {
+      "test_case": {
+        "id": 6,
+        "question": "What information appears on the invoice during checkout?",
+        "expected_keywords": [
+          "folio details",
+          "invoice type",
+          "document number",
+          "payment method",
+          "total amount"
+        ],
+        "difficulty": "medium",
+        "category": "checkout_process"
+      },
+      "evaluation": {
+        "has_relevant_content": true,
+        "keyword_matches": 5,
+        "total_keywords": 5,
+        "matched_keywords": [
+          "folio details",
+          "invoice type",
+          "document number",
+          "payment method",
+          "total amount"
+        ],
+        "retrieval_score": 1.0,
+        "doc_count": 3
+      },
+      "retrieved_doc_count": 3
+    },
+    {
+      "test_case": {
+        "id": 7,
+        "question": "How do I cancel a reservation?",
+        "expected_keywords": [
+          "cancel booking",
+          "confirmed reservation",
+          "tentative",
+          "cancellation reason",
+          "entry error"
+        ],
+        "difficulty": "easy",
+        "category": "reservation_management"
+      },
+      "evaluation": {
+        "has_relevant_content": true,
+        "keyword_matches": 5,
+        "total_keywords": 5,
+        "matched_keywords": [
+          "cancel booking",
+          "confirmed reservation",
+          "tentative",
+          "cancellation reason",
+          "entry error"
+        ],
+        "retrieval_score": 1.0,
+        "doc_count": 3
+      },
+      "retrieved_doc_count": 3
+    },
+    {
+      "test_case": {
+        "id": 8,
+        "question": "What are the steps to login with QR code?",
+        "expected_keywords": [
+          "qr code",
+          "60 seconds",
+          "hotel mate app",
+          "generate new code",
+          "instant sign-in"
+        ],
+        "difficulty": "easy",
+        "category": "authentication"
+      },
+      "evaluation": {
+        "has_relevant_content": true,
+        "keyword_matches": 5,
+        "total_keywords": 5,
+        "matched_keywords": [
+          "qr code",
+          "60 seconds",
+          "hotel mate app",
+          "generate new code",
+          "instant sign-in"
+        ],
+        "retrieval_score": 1.0,
+        "doc_count": 3
+      },
+      "retrieved_doc_count": 3
+    },
+    {
+      "test_case": {
+        "id": 9,
+        "question": "How do I set up meal allocation pricing?",
+        "expected_keywords": [
+          "meal allocation wizard",
+          "breakfast pricing",
+          "lunch pricing",
+          "dinner pricing",
+          "create allocation"
+        ],
+        "difficulty": "medium",
+        "category": "property_setup"
+      },
+      "evaluation": {
+        "has_relevant_content": true,
+        "keyword_matches": 5,
+        "total_keywords": 5,
+        "matched_keywords": [
+          "meal allocation wizard",
+          "breakfast pricing",
+          "lunch pricing",
+          "dinner pricing",
+          "create allocation"
+        ],
+        "retrieval_score": 1.0,
+        "doc_count": 3
+      },
+      "retrieved_doc_count": 3
+    },
+    {
+      "test_case": {
+        "id": 10,
+        "question": "What payment methods can I accept from guests?",
+        "expected_keywords": [
+          "payment method",
+          "credit card",
+          "cash",
+          "bank transfer",
+          "online payment"
+        ],
+        "difficulty": "easy",
+        "category": "financial_operations"
+      },
+      "evaluation": {
+        "has_relevant_content": true,
+        "keyword_matches": 4,
+        "total_keywords": 5,
+        "matched_keywords": [
+          "payment method",
+          "credit card",
+          "cash",
+          "online payment"
+        ],
+        "retrieval_score": 0.8,
+        "doc_count": 3
+      },
+      "retrieved_doc_count": 3
+    },
+    {
+      "test_case": {
+        "id": 11,
+        "question": "How do I change a guest's room?",
+        "expected_keywords": [
+          "room change",
+          "new room number",
+          "reason for room change",
+          "maintenance issues",
+          "guest request"
+        ],
+        "difficulty": "medium",
+        "category": "guest_operations"
+      },
+      "evaluation": {
+        "has_relevant_content": true,
+        "keyword_matches": 5,
+        "total_keywords": 5,
+        "matched_keywords": [
+          "room change",
+          "new room number",
+          "reason for room change",
+          "maintenance issues",
+          "guest request"
+        ],
+        "retrieval_score": 1.0,
+        "doc_count": 3
+      },
+      "retrieved_doc_count": 3
+    },
+    {
+      "test_case": {
+        "id": 12,
+        "question": "What are the property creation steps?",
+        "expected_keywords": [
+          "18 simple steps",
+          "property type",
+          "property name",
+          "home currency",
+          "cannot change"
+        ],
+        "difficulty": "medium",
+        "category": "property_setup"
+      },
+      "evaluation": {
+        "has_relevant_content": true,
+        "keyword_matches": 5,
+        "total_keywords": 5,
+        "matched_keywords": [
+          "18 simple steps",
+          "property type",
+          "property name",
+          "home currency",
+          "cannot change"
+        ],
+        "retrieval_score": 1.0,
+        "doc_count": 3
+      },
+      "retrieved_doc_count": 3
+    },
+    {
+      "test_case": {
+        "id": 13,
+        "question": "How do I process a cash payout to a guest?",
+        "expected_keywords": [
+          "cash payout",
+          "refunds",
+          "reimbursements",
+          "payout source account",
+          "process payout"
+        ],
+        "difficulty": "medium",
+        "category": "financial_operations"
+      },
+      "evaluation": {
+        "has_relevant_content": true,
+        "keyword_matches": 5,
+        "total_keywords": 5,
+        "matched_keywords": [
+          "cash payout",
+          "refunds",
+          "reimbursements",
+          "payout source account",
+          "process payout"
+        ],
+        "retrieval_score": 1.0,
+        "doc_count": 3
+      },
+      "retrieved_doc_count": 3
+    },
+    {
+      "test_case": {
+        "id": 14,
+        "question": "What document types can I upload for guests?",
+        "expected_keywords": [
+          "document type",
+          "passport/nic",
+          "booking voucher",
+          "payment slip",
+          "visa document"
+        ],
+        "difficulty": "easy",
+        "category": "guest_management"
+      },
+      "evaluation": {
+        "has_relevant_content": true,
+        "keyword_matches": 5,
+        "total_keywords": 5,
+        "matched_keywords": [
+          "document type",
+          "passport/nic",
+          "booking voucher",
+          "payment slip",
+          "visa document"
+        ],
+        "retrieval_score": 1.0,
+        "doc_count": 3
+      },
+      "retrieved_doc_count": 3
+    },
+    {
+      "test_case": {
+        "id": 15,
+        "question": "How do I shorten a guest's stay?",
+        "expected_keywords": [
+          "shorten stay",
+          "checked-in reservation",
+          "shorten till",
+          "earlier check-out",
+          "recalculated"
+        ],
+        "difficulty": "medium",
+        "category": "reservation_modifications"
+      },
+      "evaluation": {
+        "has_relevant_content": true,
+        "keyword_matches": 5,
+        "total_keywords": 5,
+        "matched_keywords": [
+          "shorten stay",
+          "checked-in reservation",
+          "shorten till",
+          "earlier check-out",
+          "recalculated"
+        ],
+        "retrieval_score": 1.0,
+        "doc_count": 3
+      },
+      "retrieved_doc_count": 3
+    },
+    {
+      "test_case": {
+        "id": 16,
+        "question": "What subscription plans are available?",
+        "expected_keywords": [
+          "$29/month",
+          "first 10 rooms",
+          "$2/month",
+          "extra room",
+          "room count"
+        ],
+        "difficulty": "easy",
+        "category": "property_setup"
+      },
+      "evaluation": {
+        "has_relevant_content": true,
+        "keyword_matches": 5,
+        "total_keywords": 5,
+        "matched_keywords": [
+          "$29/month",
+          "first 10 rooms",
+          "$2/month",
+          "extra room",
+          "room count"
+        ],
+        "retrieval_score": 1.0,
+        "doc_count": 3
+      },
+      "retrieved_doc_count": 3
+    },
+    {
+      "test_case": {
+        "id": 17,
+        "question": "How do I edit reservation details?",
+        "expected_keywords": [
+          "edit booking details",
+          "overview",
+          "financials",
+          "guests",
+          "attachments",
+          "four tabs"
+        ],
+        "difficulty": "medium",
+        "category": "reservation_management"
+      },
+      "evaluation": {
+        "has_relevant_content": true,
+        "keyword_matches": 5,
+        "total_keywords": 6,
+        "matched_keywords": [
+          "edit booking details",
+          "overview",
+          "financials",
+          "guests",
+          "attachments"
+        ],
+        "retrieval_score": 0.8333333333333334,
+        "doc_count": 3
+      },
+      "retrieved_doc_count": 3
+    },
+    {
+      "test_case": {
+        "id": 18,
+        "question": "What are the guest check-in requirements?",
+        "expected_keywords": [
+          "guest name",
+          "date of birth",
+          "country",
+          "email & phone",
+          "id number",
+          "upload id"
+        ],
+        "difficulty": "medium",
+        "category": "guest_operations"
+      },
+      "evaluation": {
+        "has_relevant_content": true,
+        "keyword_matches": 6,
+        "total_keywords": 6,
+        "matched_keywords": [
+          "guest name",
+          "date of birth",
+          "country",
+          "email & phone",
+          "id number",
+          "upload id"
+        ],
+        "retrieval_score": 1.0,
+        "doc_count": 3
+      },
+      "retrieved_doc_count": 3
+    },
+    {
+      "test_case": {
+        "id": 19,
+        "question": "How long are QR codes valid for login?",
+        "expected_keywords": [
+          "60 seconds",
+          "expired",
+          "generate new code",
+          "qr code validity"
+        ],
+        "difficulty": "easy",
+        "category": "authentication"
+      },
+      "evaluation": {
+        "has_relevant_content": true,
+        "keyword_matches": 4,
+        "total_keywords": 4,
+        "matched_keywords": [
+          "60 seconds",
+          "expired",
+          "generate new code",
+          "qr code validity"
+        ],
+        "retrieval_score": 1.0,
+        "doc_count": 3
+      },
+      "retrieved_doc_count": 3
+    },
+    {
+      "test_case": {
+        "id": 20,
+        "question": "What happens after I complete property setup?",
+        "expected_keywords": [
+          "create property",
+          "property is ready",
+          "review details",
+          "confirmation screen"
+        ],
+        "difficulty": "easy",
+        "category": "property_setup"
+      },
+      "evaluation": {
+        "has_relevant_content": true,
+        "keyword_matches": 3,
+        "total_keywords": 4,
+        "matched_keywords": [
+          "create property",
+          "property is ready",
+          "confirmation screen"
+        ],
+        "retrieval_score": 0.75,
+        "doc_count": 3
+      },
+      "retrieved_doc_count": 3
+    },
+    {
+      "test_case": {
+        "id": 21,
+        "question": "How do I apply service charges and taxes?",
+        "expected_keywords": [
+          "service charge & taxes",
+          "checkbox",
+          "automatically applies",
+          "relevant service charges"
+        ],
+        "difficulty": "medium",
+        "category": "financial_operations"
+      },
+      "evaluation": {
+        "has_relevant_content": true,
+        "keyword_matches": 3,
+        "total_keywords": 4,
+        "matched_keywords": [
+          "service charge & taxes",
+          "checkbox",
+          "relevant service charges"
+        ],
+        "retrieval_score": 0.75,
+        "doc_count": 3
+      },
+      "retrieved_doc_count": 3
+    },
+    {
+      "test_case": {
+        "id": 22,
+        "question": "What are the available reservation statuses?",
+        "expected_keywords": [
+          "confirmed reservation",
+          "tentative",
+          "checked-in",
+          "checked-out",
+          "cancelled"
+        ],
+        "difficulty": "easy",
+        "category": "reservation_management"
+      },
+      "evaluation": {
+        "has_relevant_content": true,
+        "keyword_matches": 4,
+        "total_keywords": 5,
+        "matched_keywords": [
+          "confirmed reservation",
+          "tentative",
+          "checked-out",
+          "cancelled"
+        ],
+        "retrieval_score": 0.8,
+        "doc_count": 3
+      },
+      "retrieved_doc_count": 3
+    },
+    {
+      "test_case": {
+        "id": 23,
+        "question": "How do I verify my email during signup?",
+        "expected_keywords": [
+          "4-digit verification code",
+          "verification boxes",
+          "resend code",
+          "email verification"
+        ],
+        "difficulty": "easy",
+        "category": "account_management"
+      },
+      "evaluation": {
+        "has_relevant_content": true,
+        "keyword_matches": 4,
+        "total_keywords": 4,
+        "matched_keywords": [
+          "4-digit verification code",
+          "verification boxes",
+          "resend code",
+          "email verification"
+        ],
+        "retrieval_score": 1.0,
+        "doc_count": 3
+      },
+      "retrieved_doc_count": 3
+    },
+    {
+      "test_case": {
+        "id": 24,
+        "question": "What room change reasons can I select?",
+        "expected_keywords": [
+          "guest request",
+          "maintenance issues",
+          "cleanliness concerns",
+          "noise disturbance",
+          "safety concerns"
+        ],
+        "difficulty": "medium",
+        "category": "guest_operations"
+      },
+      "evaluation": {
+        "has_relevant_content": true,
+        "keyword_matches": 5,
+        "total_keywords": 5,
+        "matched_keywords": [
+          "guest request",
+          "maintenance issues",
+          "cleanliness concerns",
+          "noise disturbance",
+          "safety concerns"
+        ],
+        "retrieval_score": 1.0,
+        "doc_count": 3
+      },
+      "retrieved_doc_count": 3
+    },
+    {
+      "test_case": {
+        "id": 25,
+        "question": "How do I take payments from guests?",
+        "expected_keywords": [
+          "take payments",
+          "payment amount",
+          "payment method",
+          "currency",
+          "account",
+          "confirm payment"
+        ],
+        "difficulty": "medium",
+        "category": "financial_operations"
+      },
+      "evaluation": {
+        "has_relevant_content": true,
+        "keyword_matches": 6,
+        "total_keywords": 6,
+        "matched_keywords": [
+          "take payments",
+          "payment amount",
+          "payment method",
+          "currency",
+          "account",
+          "confirm payment"
+        ],
+        "retrieval_score": 1.0,
+        "doc_count": 3
+      },
+      "retrieved_doc_count": 3
+    }
+  ]
+}

@@ -1,0 +1,2065 @@
+{
+  "test_summary": {
+    "total_queries": 292,
+    "confusion_matrix": {
+      "tp": 187,
+      "fp": 0,
+      "tn": 105,
+      "fn": 0
+    },
+    "metrics": {
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.0
+    }
+  },
+  "detailed_results": [
+    {
+      "query": "How do I create a new reservation?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "How do I access the Front Desk layout?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "What is Quick Reservation and how do I use it?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "How do I fill in guest information during booking?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "What meal plan options are available?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "How do I select a room type during reservation?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Can I add multiple rooms to the same reservation?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "How do I edit a reservation after it's created?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "What actions are available for confirmed reservations?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "How do I check in a guest?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "What guest details are required during check-in?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "How do I upload guest ID documents?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "What is the difference between booker and guest?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "How do I mark a guest as a repeat visitor?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "How do I check out a guest?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "How do I print or email receipts to guests?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "What information appears on the invoice?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "How do I cancel a reservation?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "What cancellation reasons are available?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Can I cancel after check-in?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "How do I extend a guest's stay?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "What details are needed to extend a reservation?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "How do I shorten a guest's stay?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "How do I change a guest's room?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "What reasons can I select for room changes?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "How do I add post charges to a reservation?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "What types of charges can I add?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "How do I apply service charges and taxes?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "How do I add discounts or credits?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "How do I process guest payments?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "What payment methods are accepted?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "How do I handle cash payouts to guests?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "How do I access the Financials tab?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "What appears in the Folio Detail?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "How do I view deposit information?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "How do I manage guest attachments?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "What document types can I upload?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "How do I login with email and password?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "How does QR code login work?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "How long are QR codes valid?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "What if my QR code expires?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "How do I reset my password?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "How do I create a property profile?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "What property types can I select?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "How do I set my home currency?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Can I change currency after setup?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "How do I pin my property location on the map?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "How do I upload property images?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "How do I set up meal allocation?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "How do I configure breakfast pricing?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "How do I configure lunch pricing?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "How do I configure dinner pricing?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Can I skip meal allocation setup?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "How do I choose a subscription plan?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "What does the $29/month plan include?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "How much does each additional room cost?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "How do I sign up for a new account?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "What information is needed for signup?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "How do I verify my email address?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "What if I don't receive the verification code?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "How do I set up a secure password?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "How many steps are in the signup process?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "What time is check-in?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "What time is check-out?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Do you have free WiFi?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Is breakfast included?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "What amenities do you offer?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Do you have a swimming pool?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Is parking available?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "What's your pet policy?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Do you provide shuttle service?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Are there accessible rooms?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "What restaurants are in the hotel?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Do you have a spa?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "What's the cancellation policy?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Do you offer room service?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "What's included in the room rate?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Do you have conference facilities?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Is the hotel near the airport?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "What's your smoking policy?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Do you have a fitness center?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Can I request a late checkout?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "What payment methods do you accept?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Do you offer valet parking?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Is there a business center?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "What's the dress code for the restaurant?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Do you have laundry service?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Can I store my luggage?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "What's the minimum age for check-in?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Do you have connecting rooms?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Is there a concierge service?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "What's your noise policy?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Do you allow early check-in?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Can I get extra towels?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "What's the housekeeping schedule?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Do you have babysitting services?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Is there airport transportation?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "What security measures do you have?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Can I request a specific room?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Do you offer group discounts?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "What's your guest policy?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Is there a safe in the room?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Do you have ice machines?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "What's your lost and found policy?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Do you have wheelchair accessible rooms?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Is there 24-hour front desk service?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Can I get a receipt for my stay?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "What's the maximum occupancy per room?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Do you offer package deals?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "I want to book a suite",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "My room key isn't working",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "The AC in my room is broken",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "I need extra pillows",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Where is the hotel lobby?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "How do I connect to hotel WiFi?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "My reservation confirmation number",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "I want to upgrade my room",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "What floor is the restaurant on?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Pool hours and rules",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Spa appointment booking",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Room cleaning service",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Hotel checkout process",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Dining options nearby",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Hotel address and directions",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Parking fees and policies",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Guest loyalty program",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Special requests for stay",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Hotel amenities list",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Room temperature control",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Minibar pricing",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Event venue rental",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Wedding booking inquiry",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Corporate rates available",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Seasonal promotions",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Holiday accommodation",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Long-term stay rates",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Family-friendly facilities",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Accessibility features",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Pet accommodation fees",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Smoking designated areas",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Emergency procedures",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Guest complaint procedure",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Local attractions near hotel",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Transportation arrangements",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Medical emergency protocols",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Food allergies accommodation",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Cultural dietary requirements",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Room assignment preferences",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Maintenance request procedures",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Guest feedback submission",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Billing inquiry resolution",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Insurance coverage details",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Damage assessment procedures",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Guest registration process",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Identification requirements",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Age verification policies",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Group booking coordination",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Event planning assistance",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Catering service options",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "How much does a deluxe room cost?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Can I modify my booking?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "What meal plans do you offer?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Do you have family rooms?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "What's the rate for extra beds?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "How do I make special dietary requests?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Can I book excursion charges in advance?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "What are your airport pickup charges?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Do you offer half board meal plans?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "What's included in full board?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "How do I request vegetarian meals only?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Can I get a room with sea view?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "What's your policy on no-shows?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "How do I extend my checkout time?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Can I pay with multiple currencies?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "What's the process for group bookings?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Do you have tour packages available?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "How do I request early check-in fees?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "What are your spa service charges?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Can I add laundry charges to my bill?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "What's the policy for booking references?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "How do I contact the travel agent for my booking?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "What's the difference between confirm and tentative status?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "Can I book rooms with FOC (Free of Charge)?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "How do I handle overbooking situations?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "What documents do I need for visa requirements?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "How do I process rollback actions?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "What's the recall function for check-outs?",
+      "expected": true,
+      "predicted": true,
+      "correct": true,
+      "type": "hotel"
+    },
+    {
+      "query": "What's the weather today?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "How do I cook pasta?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "What's 2+2?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "Who is the president?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "How to learn Python?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "Best movies of 2024",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "How to lose weight?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "What's the capital of France?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "How to fix a car engine?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "What's the meaning of life?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "How to invest in stocks?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "Best programming languages",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "How to bake a cake?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "What's artificial intelligence?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "How to write a resume?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "What's quantum physics?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "How to start a business?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "Best travel destinations",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "How to learn guitar?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "What's the latest news?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "How to meditate properly?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "What's machine learning?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "How to grow plants?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "Best workout routines",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "How to save money?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "What's blockchain technology?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "How to write code?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "Best healthy recipes",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "How to study effectively?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "What's climate change?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "How to take good photos?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "Best smartphone 2024",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "How to speak Spanish?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "What's the universe made of?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "How to build a website?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "Best places to visit",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "How to paint a room?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "What's renewable energy?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "How to run a marathon?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "Best laptop for students",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "Tell me a joke",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "What's for dinner tonight?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "How old are you?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "What's your favorite color?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "Can you dance?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "What's your name?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "Do you have feelings?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "What's the time?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "How are you today?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "What's your purpose?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "Can you sing a song?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "What's your opinion on politics?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "Do you dream?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "What's your favorite food?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "Can you help with homework?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "What's the meaning of success?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "How to be happy?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "What's love?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "Can you predict the future?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "What's consciousness?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "How does the internet work?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "What's the best career?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "How to make friends?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "What's the purpose of education?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "How to overcome fear?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "What's creativity?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "How to be confident?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "What's wisdom?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "How to handle stress?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "What's emotional intelligence?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "How to communicate better?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "What's leadership?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "How to solve conflicts?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "What's innovation?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "How to think critically?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "What's the future of humanity?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "How to learn new skills?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "What's work-life balance?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "How to build relationships?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "What's personal growth?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "How to make decisions?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "What's time management?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "How to be productive?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "What's goal setting?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "How to overcome challenges?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "What's resilience?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "How to adapt to change?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "What's mindfulness?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "How to practice gratitude?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "What's self-awareness?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "How to build habits?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "What's motivation?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "How to find purpose?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "What's success in life?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "How to balance priorities?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "What's emotional wellness?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "How to develop patience?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "What's personal branding?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "How to network effectively?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "What's financial literacy?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "How to manage debt?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "What's retirement planning?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "How to build wealth?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "What's passive income?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    },
+    {
+      "query": "How to budget money?",
+      "expected": false,
+      "predicted": false,
+      "correct": true,
+      "type": "non_hotel"
+    }
+  ]
+}

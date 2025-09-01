@@ -1,0 +1,179 @@
+{
+  "retrieval_test_cases": [
+    {
+      "id": 1,
+      "question": "How do I create a new reservation?",
+      "expected_keywords": ["quick reservation", "front desk", "reservation drawer", "basic information", "travel agent", "booking ref"],
+      "difficulty": "easy",
+      "category": "reservation_management"
+    },
+    {
+      "id": 2,
+      "question": "What steps are needed to check in a guest?",
+      "expected_keywords": ["check-in drawer", "guest details", "date of birth", "id type", "complete check-in"],
+      "difficulty": "medium",
+      "category": "guest_operations"
+    },
+    {
+      "id": 3,
+      "question": "How do I extend a guest's stay?",
+      "expected_keywords": ["extend stay", "checked-in reservation", "extend till", "room charge", "per day"],
+      "difficulty": "medium",
+      "category": "reservation_modifications"
+    },
+    {
+      "id": 4,
+      "question": "What meal plan options can I select?",
+      "expected_keywords": ["meal plan", "bed & breakfast", "half board", "full board"],
+      "difficulty": "easy",
+      "category": "meal_management"
+    },
+    {
+      "id": 5,
+      "question": "How do I add post charges to a reservation?",
+      "expected_keywords": ["post charges", "transaction type", "late check-out fee", "spa charges", "amount"],
+      "difficulty": "medium",
+      "category": "financial_operations"
+    },
+    {
+      "id": 6,
+      "question": "What information appears on the invoice during checkout?",
+      "expected_keywords": ["folio details", "invoice type", "document number", "payment method", "total amount"],
+      "difficulty": "medium",
+      "category": "checkout_process"
+    },
+    {
+      "id": 7,
+      "question": "How do I cancel a reservation?",
+      "expected_keywords": ["cancel booking", "confirmed reservation", "tentative", "cancellation reason", "entry error"],
+      "difficulty": "easy",
+      "category": "reservation_management"
+    },
+    {
+      "id": 8,
+      "question": "What are the steps to login with QR code?",
+      "expected_keywords": ["qr code", "60 seconds", "hotel mate app", "generate new code", "instant sign-in"],
+      "difficulty": "easy",
+      "category": "authentication"
+    },
+    {
+      "id": 9,
+      "question": "How do I set up meal allocation pricing?",
+      "expected_keywords": ["meal allocation wizard", "breakfast pricing", "lunch pricing", "dinner pricing", "create allocation"],
+      "difficulty": "medium",
+      "category": "property_setup"
+    },
+    {
+      "id": 10,
+      "question": "What payment methods can I accept from guests?",
+      "expected_keywords": ["payment method", "credit card", "cash", "bank transfer", "online payment"],
+      "difficulty": "easy",
+      "category": "financial_operations"
+    },
+    {
+      "id": 11,
+      "question": "How do I change a guest's room?",
+      "expected_keywords": ["room change", "new room number", "reason for room change", "maintenance issues", "guest request"],
+      "difficulty": "medium",
+      "category": "guest_operations"
+    },
+    {
+      "id": 12,
+      "question": "What are the property creation steps?",
+      "expected_keywords": ["18 simple steps", "property type", "property name", "home currency", "cannot change"],
+      "difficulty": "medium",
+      "category": "property_setup"
+    },
+    {
+      "id": 13,
+      "question": "How do I process a cash payout to a guest?",
+      "expected_keywords": ["cash payout", "refunds", "reimbursements", "payout source account", "process payout"],
+      "difficulty": "medium",
+      "category": "financial_operations"
+    },
+    {
+      "id": 14,
+      "question": "What document types can I upload for guests?",
+      "expected_keywords": ["document type", "passport/nic", "booking voucher", "payment slip", "visa document"],
+      "difficulty": "easy",
+      "category": "guest_management"
+    },
+    {
+      "id": 15,
+      "question": "How do I shorten a guest's stay?",
+      "expected_keywords": ["shorten stay", "checked-in reservation", "shorten till", "earlier check-out", "recalculated"],
+      "difficulty": "medium",
+      "category": "reservation_modifications"
+    },
+    {
+      "id": 16,
+      "question": "What subscription plans are available?",
+      "expected_keywords": ["$29/month", "first 10 rooms", "$2/month", "extra room", "room count"],
+      "difficulty": "easy",
+      "category": "property_setup"
+    },
+    {
+      "id": 17,
+      "question": "How do I edit reservation details?",
+      "expected_keywords": ["edit booking details", "overview", "financials", "guests", "attachments", "four tabs"],
+      "difficulty": "medium",
+      "category": "reservation_management"
+    },
+    {
+      "id": 18,
+      "question": "What are the guest check-in requirements?",
+      "expected_keywords": ["guest name", "date of birth", "country", "email & phone", "id number", "upload id"],
+      "difficulty": "medium",
+      "category": "guest_operations"
+    },
+    {
+      "id": 19,
+      "question": "How long are QR codes valid for login?",
+      "expected_keywords": ["60 seconds", "expired", "generate new code", "qr code validity"],
+      "difficulty": "easy",
+      "category": "authentication"
+    },
+    {
+      "id": 20,
+      "question": "What happens after I complete property setup?",
+      "expected_keywords": ["create property", "property is ready", "review details", "confirmation screen"],
+      "difficulty": "easy",
+      "category": "property_setup"
+    },
+    {
+      "id": 21,
+      "question": "How do I apply service charges and taxes?",
+      "expected_keywords": ["service charge & taxes", "checkbox", "automatically applies", "relevant service charges"],
+      "difficulty": "medium",
+      "category": "financial_operations"
+    },
+    {
+      "id": 22,
+      "question": "What are the available reservation statuses?",
+      "expected_keywords": ["confirmed reservation", "tentative", "checked-in", "checked-out", "cancelled"],
+      "difficulty": "easy",
+      "category": "reservation_management"
+    },
+    {
+      "id": 23,
+      "question": "How do I verify my email during signup?",
+      "expected_keywords": ["4-digit verification code", "verification boxes", "resend code", "email verification"],
+      "difficulty": "easy",
+      "category": "account_management"
+    },
+    {
+      "id": 24,
+      "question": "What room change reasons can I select?",
+      "expected_keywords": ["guest request", "maintenance issues", "cleanliness concerns", "noise disturbance", "safety concerns"],
+      "difficulty": "medium",
+      "category": "guest_operations"
+    },
+    {
+      "id": 25,
+      "question": "How do I take payments from guests?",
+      "expected_keywords": ["take payments", "payment amount", "payment method", "currency", "account", "confirm payment"],
+      "difficulty": "medium",
+      "category": "financial_operations"
+    }
+  ]
+}
