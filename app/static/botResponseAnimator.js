@@ -1,7 +1,7 @@
 // botResponseAnimator.js
 // Reveals bot response with character-by-character typing animation like ChatGPT
 
-export function showBotResponseSteps(botText, contentDiv, charDelay = 25) {
+export function showBotResponseSteps(botText, contentDiv, charDelay = 5) {
   // Group each step and its details into a single chunk
   // Regex matches: Step X - ... or Step X – ...
   const stepRegex = /(?:Step\s*\d+\s*[–-].*?(?=Step\s*\d+\s*[–-]|$))/gs;
@@ -20,7 +20,13 @@ export function showBotResponseSteps(botText, contentDiv, charDelay = 25) {
     steps = [botText];
   }
 
-  let currentStep = 0;
+  // Group steps into chunks of 3
+  const stepGroups = [];
+  for (let i = 0; i < steps.length; i += 3) {
+    stepGroups.push(steps.slice(i, i + 3));
+  }
+
+  let currentGroupIndex = 0;
 
   function createNewBotMessage() {
     // Get the chat box and create a new bot message bubble
@@ -51,14 +57,6 @@ export function showBotResponseSteps(botText, contentDiv, charDelay = 25) {
     // Create content container
     const newContentDiv = document.createElement("div");
     newContentDiv.className = "bot-content";
-    newContentDiv.style.background = "#e4e6eb";
-    newContentDiv.style.color = "#333";
-    newContentDiv.style.padding = "12px 16px";
-    newContentDiv.style.borderRadius = "12px";
-    newContentDiv.style.borderBottomLeftRadius = "0";
-    newContentDiv.style.lineHeight = "1.5";
-    newContentDiv.style.whiteSpace = "pre-wrap";
-    newContentDiv.style.maxWidth = "100%";
     
     // Append avatar and content
     botMsg.appendChild(avatar);
@@ -100,18 +98,97 @@ export function showBotResponseSteps(botText, contentDiv, charDelay = 25) {
     typeNextChar();
   }
 
-  function showStep(stepText, targetContentDiv) {
-    typeText(stepText, targetContentDiv, () => {
-      // After this step is complete, show next step if available
-      currentStep++;
-      if (currentStep < steps.length) {
-        // Create new bubble for next step
-        const newContentDiv = createNewBotMessage();
-        showStep(steps[currentStep], newContentDiv);
+  function showStepGroup(stepGroup, isFirstGroup = false) {
+    let stepIndex = 0;
+    
+    function showNextStepInGroup() {
+      if (stepIndex < stepGroup.length) {
+        const stepText = stepGroup[stepIndex];
+        const targetDiv = isFirstGroup && stepIndex === 0 ? contentDiv : createNewBotMessage();
+        
+        typeText(stepText, targetDiv, () => {
+          stepIndex++;
+          if (stepIndex < stepGroup.length) {
+            // More steps in this group, show next step after short delay
+            setTimeout(showNextStepInGroup, 50);
+          } else {
+            // Group completed, check if there are more groups
+            if (currentGroupIndex < stepGroups.length - 1) {
+              // More groups available, show Next button
+              showNextButton(targetDiv);
+            }
+          }
+        });
       }
-    });
+    }
+    
+    showNextStepInGroup();
   }
 
-  // Start with the first step using the provided contentDiv
-  showStep(steps[currentStep], contentDiv);
+  function showNextButton(lastContentDiv) {
+    // Create a container for the Next button positioned below the bot message
+    const buttonContainer = document.createElement("div");
+    buttonContainer.style.display = "flex";
+    buttonContainer.style.alignItems = "flex-start";
+    buttonContainer.style.gap = "8px";
+    buttonContainer.style.marginTop = "8px";
+    buttonContainer.style.marginBottom = "8px";
+    buttonContainer.style.alignSelf = "flex-start";
+    buttonContainer.style.maxWidth = "75%";
+    
+    // Create a spacer div to mimic the avatar space
+    const avatarSpacer = document.createElement("div");
+    avatarSpacer.style.width = "29px";
+    avatarSpacer.style.height = "1px";
+    avatarSpacer.style.flexShrink = "0";
+    
+    // Create button wrapper
+    const buttonWrapper = document.createElement("div");
+    buttonWrapper.style.display = "flex";
+    buttonWrapper.style.justifyContent = "flex-end";
+    buttonWrapper.style.width = "100%";
+    
+    const nextButton = document.createElement("button");
+    nextButton.textContent = "Next";
+    nextButton.style.background = "#007bff";
+    nextButton.style.color = "white";
+    nextButton.style.border = "none";
+    nextButton.style.padding = "4px 10px";
+    nextButton.style.borderRadius = "4px";
+    nextButton.style.cursor = "pointer";
+    nextButton.style.fontSize = "11px";
+    nextButton.style.fontWeight = "500";
+    nextButton.style.transition = "background-color 0.2s";
+    nextButton.style.boxShadow = "0 1px 3px rgba(0,0,0,0.1)";
+    
+    nextButton.onmouseover = () => {
+      nextButton.style.background = "#0056b3";
+    };
+    nextButton.onmouseout = () => {
+      nextButton.style.background = "#007bff";
+    };
+    
+    nextButton.onclick = () => {
+      // Remove the button container
+      buttonContainer.remove();
+      
+      // Move to next group
+      currentGroupIndex++;
+      showStepGroup(stepGroups[currentGroupIndex]);
+    };
+    
+    buttonWrapper.appendChild(nextButton);
+    buttonContainer.appendChild(avatarSpacer);
+    buttonContainer.appendChild(buttonWrapper);
+    
+    // Get the chat box and insert the button container
+    const chatBox = lastContentDiv.parentElement.parentElement;
+    chatBox.appendChild(buttonContainer);
+    
+    // Scroll to show the button
+    chatBox.scrollTop = chatBox.scrollHeight;
+  }
+
+  // Start showing the first group of steps
+  showStepGroup(stepGroups[currentGroupIndex], true);
 }

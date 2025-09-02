@@ -94,14 +94,6 @@ function createBotMessage() {
   // Create content container (will hold either dots or actual message)
   const contentDiv = document.createElement("div");
   contentDiv.className = "bot-content";
-  contentDiv.style.background = "#e4e6eb";
-  contentDiv.style.color = "#333";
-  contentDiv.style.padding = "12px 16px";
-  contentDiv.style.borderRadius = "12px";
-  contentDiv.style.borderBottomLeftRadius = "0";
-  contentDiv.style.lineHeight = "1.5";
-  contentDiv.style.whiteSpace = "pre-wrap";
-  contentDiv.style.maxWidth = "100%";
   
   // Append avatar and content
   botMsg.appendChild(avatar);
@@ -123,7 +115,7 @@ function addTypingDots(contentDiv) {
     dot.className = "dot";
     dot.style.width = "8px";
     dot.style.height = "8px";
-    dot.style.background = "#000000";
+    dot.style.background = "#ffffffff";
     dot.style.borderRadius = "50%";
     dot.style.animation = "bounce 1.5s infinite ease-in-out";
     dot.style.animationDelay = `${i * 0.15}s`;
@@ -202,7 +194,7 @@ function startWelcome() {
     // Start character-by-character typing animation (same speed as bot responses)
     const chars = [...WELCOME_MSG];
     let i = 0;
-    const SPEED = 25; // ms per char (same as bot responses)
+    const SPEED = 5; // ms per char (same as bot responses)
     welcomeTypingTimer = setInterval(() => {
       if (i < chars.length) {
         welcomeContent.textContent += chars[i++];
