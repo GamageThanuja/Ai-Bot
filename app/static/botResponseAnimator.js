@@ -1,7 +1,21 @@
 // botResponseAnimator.js
 // Reveals bot response with character-by-character typing animation like ChatGPT
 
-export function showBotResponseSteps(botText, contentDiv, charDelay = 5) {
+// Global state for stopping generation
+let shouldStop = false;
+let currentTimeout = null;
+
+export function stopGeneration() {
+  shouldStop = true;
+  if (currentTimeout) {
+    clearTimeout(currentTimeout);
+    currentTimeout = null;
+  }
+}
+
+export function showBotResponseSteps(botText, contentDiv, onComplete = null, charDelay = 5) {
+  // Reset stop state
+  shouldStop = false;
   // Group each step and its details into a single chunk
   // Regex matches: Step X - ... or Step X – ...
   const stepRegex = /(?:Step\s*\d+\s*[–-].*?(?=Step\s*\d+\s*[–-]|$))/gs;
@@ -78,6 +92,11 @@ export function showBotResponseSteps(botText, contentDiv, charDelay = 5) {
     let i = 0;
     
     function typeNextChar() {
+      // Check if generation should stop
+      if (shouldStop) {
+        return; // Stop immediately without callback
+      }
+      
       if (i < chars.length) {
         targetDiv.textContent += chars[i];
         i++;
@@ -86,11 +105,11 @@ export function showBotResponseSteps(botText, contentDiv, charDelay = 5) {
         const chatBox = targetDiv.parentElement.parentElement.parentElement;
         chatBox.scrollTop = chatBox.scrollHeight;
         
-        setTimeout(typeNextChar, charDelay);
+        currentTimeout = setTimeout(typeNextChar, charDelay);
       } else {
         // Typing complete, call callback after a brief pause
-        setTimeout(() => {
-          if (callback) callback();
+        currentTimeout = setTimeout(() => {
+          if (callback && !shouldStop) callback();
         }, 200);
       }
     }
@@ -110,12 +129,17 @@ export function showBotResponseSteps(botText, contentDiv, charDelay = 5) {
           stepIndex++;
           if (stepIndex < stepGroup.length) {
             // More steps in this group, show next step after short delay
-            setTimeout(showNextStepInGroup, 50);
+            currentTimeout = setTimeout(showNextStepInGroup, 50);
           } else {
             // Group completed, check if there are more groups
             if (currentGroupIndex < stepGroups.length - 1) {
               // More groups available, show Next button
               showNextButton(targetDiv);
+            } else {
+              // All groups completed, call onComplete callback
+              if (onComplete && !shouldStop) {
+                onComplete();
+              }
             }
           }
         });
@@ -174,7 +198,16 @@ export function showBotResponseSteps(botText, contentDiv, charDelay = 5) {
       
       // Move to next group
       currentGroupIndex++;
-      showStepGroup(stepGroups[currentGroupIndex]);
+      
+      // Check if this is the last group that will be shown
+      const willComplete = currentGroupIndex === stepGroups.length - 1;
+      
+      if (willComplete) {
+        // Show the last group with completion handling
+        showStepGroup(stepGroups[currentGroupIndex]);
+      } else {
+        showStepGroup(stepGroups[currentGroupIndex]);
+      }
     };
     
     buttonWrapper.appendChild(nextButton);

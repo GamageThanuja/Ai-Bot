@@ -45,6 +45,7 @@ body {
   max-width: 75%;
   line-height: 1.5;
   white-space: pre-wrap;
+  position: relative;
 }
 
 .message.user {
@@ -54,6 +55,37 @@ body {
   padding: 12px 16px;
   border-radius: 12px;
   border-bottom-right-radius: 0;
+  position: relative;
+}
+
+/* Edit button for user messages */
+.message.user .edit-btn {
+  position: absolute;
+  bottom: -8px;
+  right: 8px;
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #666;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: all 0.2s ease;
+}
+
+.message.user:hover .edit-btn {
+  display: flex;
+}
+
+.message.user .edit-btn:hover {
+  background: #ffffff;
+  color: #333;
+  transform: scale(1.1);
 }
 
 .message.bot {
@@ -85,6 +117,56 @@ body {
   white-space: pre-wrap;
   max-width: 100%;
   font-size: 14px;
+  position: relative;
+}
+
+/* Response switching controls */
+.response-controls {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  display: none;
+  gap: 4px;
+  align-items: center;
+}
+
+.message.bot:hover .response-controls {
+  display: flex;
+}
+
+.response-nav-btn {
+  width: 18px;
+  height: 18px;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  color: #666;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  transition: all 0.2s ease;
+}
+
+.response-nav-btn:hover {
+  background: #ffffff;
+  color: #333;
+}
+
+.response-nav-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.response-indicator {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.7);
+  background: rgba(0, 0, 0, 0.3);
+  padding: 1px 4px;
+  border-radius: 8px;
+  margin: 0 2px;
 }
 
 /* === Typing dots animation === */
@@ -164,6 +246,77 @@ body {
   opacity: 0.45; 
   cursor: not-allowed; 
 }
+
+/* Stop button styling in input field */
+#stop-input-btn {
+  color: #000000 !important;
+}
+
+#stop-input-btn:hover {
+  background: #f5f5f5 !important;
+  color: #000000 !important;
+}
+
+/* Edit banner styling - floating above input field */
+.edit-banner {
+  background: #3a3a3a;
+  color: white;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  border-radius: 8px;
+  margin: 0 12px 8px 12px;
+  border: 1px solid #555;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.edit-banner-icon {
+  width: 14px;
+  height: 14px;
+  color: #ffffff;
+}
+
+.edit-banner-text {
+  font-weight: 500;
+  margin-right: 4px;
+}
+
+.edit-banner-content {
+  flex: 1;
+  color: #cccccc;
+  font-size: 11px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.edit-banner-close {
+  width: 16px;
+  height: 16px;
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  transition: background-color 0.2s;
+}
+
+.edit-banner-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Remove this class as we no longer need special input styling when editing */
+/* .input-container-editing {
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+} */
 
 /* === Robot GIF === */
 #robot-gif {
