@@ -199,10 +199,10 @@ function startWelcome() {
     // Replace dots with empty text to start typing animation
     replaceDotsWithContent(welcomeContent, "");
     
-    // Start typing animation
+    // Start character-by-character typing animation (same speed as bot responses)
     const chars = [...WELCOME_MSG];
     let i = 0;
-    const SPEED = 26; // ms per char
+    const SPEED = 25; // ms per char (same as bot responses)
     welcomeTypingTimer = setInterval(() => {
       if (i < chars.length) {
         welcomeContent.textContent += chars[i++];

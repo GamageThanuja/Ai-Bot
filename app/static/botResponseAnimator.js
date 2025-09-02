@@ -1,7 +1,7 @@
 // botResponseAnimator.js
-// Reveals bot response line by line in the content div
+// Reveals bot response with character-by-character typing animation like ChatGPT
 
-export function showBotResponseSteps(botText, contentDiv, delay = 1200) {
+export function showBotResponseSteps(botText, contentDiv, charDelay = 25) {
   // Group each step and its details into a single chunk
   // Regex matches: Step X - ... or Step X – ...
   const stepRegex = /(?:Step\s*\d+\s*[–-].*?(?=Step\s*\d+\s*[–-]|$))/gs;
@@ -21,89 +21,97 @@ export function showBotResponseSteps(botText, contentDiv, delay = 1200) {
   }
 
   let currentStep = 0;
-  let nextBtn = null;
 
-  function showStep(stepText, isFirstStep = false) {
-    // Don't clear the content div - append to it instead
-    if (isFirstStep) {
-      contentDiv.innerHTML = '';
-    }
+  function createNewBotMessage() {
+    // Get the chat box and create a new bot message bubble
+    const chatBox = contentDiv.parentElement.parentElement;
     
-    // Get the parent bot message div to append the Next button after it
-    const botMessageDiv = contentDiv.parentElement;
-    const chatBox = botMessageDiv.parentElement;
-
-    // Create a container for this step to keep it separate
-    const stepContainer = document.createElement("div");
-    stepContainer.style.marginTop = currentStep > 0 ? "16px" : "0";
+    // Create new bot message structure
+    const botMsg = document.createElement("div");
+    botMsg.className = "message bot";
+    botMsg.style.display = "flex";
+    botMsg.style.alignItems = "flex-start";
+    botMsg.style.gap = "8px";
+    botMsg.style.background = "transparent";
+    botMsg.style.padding = "0";
+    botMsg.style.marginTop = "12px";
     
-    // Format lines with bullet points if they start with '-'
-    const lines = stepText.split("\n");
-    let currentLine = 0;
-    let ul = null;
+    // Create avatar element
+    const avatar = document.createElement("img");
+    avatar.className = "bot-avatar";
+    avatar.src = "/static/AI Logo-01.png";
+    avatar.alt = "HotelMate bot";
+    avatar.style.width = "29px";
+    avatar.style.height = "29px";
+    avatar.style.borderRadius = "50%";
+    avatar.style.objectFit = "cover";
+    avatar.style.boxShadow = "0 1px 2px rgba(0,0,0,.12)";
+    avatar.style.flexShrink = "0";
+    
+    // Create content container
+    const newContentDiv = document.createElement("div");
+    newContentDiv.className = "bot-content";
+    newContentDiv.style.background = "#e4e6eb";
+    newContentDiv.style.color = "#333";
+    newContentDiv.style.padding = "12px 16px";
+    newContentDiv.style.borderRadius = "12px";
+    newContentDiv.style.borderBottomLeftRadius = "0";
+    newContentDiv.style.lineHeight = "1.5";
+    newContentDiv.style.whiteSpace = "pre-wrap";
+    newContentDiv.style.maxWidth = "100%";
+    
+    // Append avatar and content
+    botMsg.appendChild(avatar);
+    botMsg.appendChild(newContentDiv);
+    
+    // Append to chat box
+    chatBox.appendChild(botMsg);
+    chatBox.scrollTop = chatBox.scrollHeight;
+    
+    return newContentDiv;
+  }
 
-    function revealNextLine() {
-      if (currentLine < lines.length) {
-        const line = lines[currentLine];
-        if (line.trim().startsWith("-")) {
-          if (!ul) {
-            ul = document.createElement("ul");
-            ul.style.margin = "8px 0 0 18px";
-            ul.style.padding = "0";
-            ul.style.listStyleType = "disc";
-            stepContainer.appendChild(ul);
-          }
-          const li = document.createElement("li");
-          li.textContent = line.replace(/^\s*-\s*/, "");
-          li.style.marginBottom = "4px";
-          ul.appendChild(li);
-        } else if (line.trim()) {
-          const p = document.createElement("p");
-          p.textContent = line;
-          p.style.margin = "0 0 4px 0";
-          stepContainer.appendChild(p);
-          ul = null; // Reset ul when we hit a non-list item
-        }
+  function typeText(text, targetDiv, callback) {
+    // Clear the content div
+    targetDiv.innerHTML = '';
+    targetDiv.style.display = "block";
+    
+    const chars = [...text]; // Handle unicode characters properly
+    let i = 0;
+    
+    function typeNextChar() {
+      if (i < chars.length) {
+        targetDiv.textContent += chars[i];
+        i++;
+        
+        // Auto-scroll during typing
+        const chatBox = targetDiv.parentElement.parentElement.parentElement;
         chatBox.scrollTop = chatBox.scrollHeight;
-        currentLine++;
-        setTimeout(revealNextLine, delay);
+        
+        setTimeout(typeNextChar, charDelay);
       } else {
-        // Show Next button if more steps remain
-        if (currentStep < steps.length - 1) {
-          // Remove existing Next button if any
-          if (nextBtn) {
-            nextBtn.remove();
-          }
-          
-          nextBtn = document.createElement("button");
-          nextBtn.textContent = "Next";
-          nextBtn.style.marginTop = "6px";
-          nextBtn.style.marginLeft = "37px"; // Align with content (29px avatar + 8px gap)
-          nextBtn.style.display = "block";
-          nextBtn.style.background = "#1a73e8";
-          nextBtn.style.color = "#fff";
-          nextBtn.style.border = "none";
-          nextBtn.style.borderRadius = "6px";
-          nextBtn.style.fontSize = "13px";
-          nextBtn.style.padding = "4px 14px";
-          nextBtn.style.cursor = "pointer";
-          nextBtn.style.width = "fit-content";
-          nextBtn.style.boxShadow = "0 1px 4px rgba(0,0,0,0.08)";
-          botMessageDiv.insertAdjacentElement("afterend", nextBtn);
-          nextBtn.onclick = () => {
-            nextBtn.remove();
-            currentStep++;
-            showStep(steps[currentStep], false); // Not first step, so don't clear content
-          };
-          chatBox.scrollTop = chatBox.scrollHeight;
-        }
+        // Typing complete, call callback after a brief pause
+        setTimeout(() => {
+          if (callback) callback();
+        }, 200);
       }
     }
     
-    // Append the step container to the main content div
-    contentDiv.appendChild(stepContainer);
-    revealNextLine();
+    typeNextChar();
   }
 
-  showStep(steps[currentStep], true); // First step, so clear content
+  function showStep(stepText, targetContentDiv) {
+    typeText(stepText, targetContentDiv, () => {
+      // After this step is complete, show next step if available
+      currentStep++;
+      if (currentStep < steps.length) {
+        // Create new bubble for next step
+        const newContentDiv = createNewBotMessage();
+        showStep(steps[currentStep], newContentDiv);
+      }
+    });
+  }
+
+  // Start with the first step using the provided contentDiv
+  showStep(steps[currentStep], contentDiv);
 }
